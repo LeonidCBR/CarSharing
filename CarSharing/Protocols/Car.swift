@@ -10,6 +10,8 @@ import Foundation
 protocol Car {
     var model: String { get }
     var number: String { get }
-//    location: Location
-//    var provider: Provider { get }
+    var location: Location { get }
+    var provider: Provider { get }
+    var fuel: Int { get }
+    var distance: Int { get }
 }

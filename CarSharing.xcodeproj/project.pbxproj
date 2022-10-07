@@ -25,6 +25,8 @@
 		D785B1B128EFBE44004C1441 /* YandexDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */; };
 		D785B1B328EFD2B2004C1441 /* YandexDriveCarsharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */; };
 		D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */; };
+		D785B1B728F00759004C1441 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B628F00759004C1441 /* Location.swift */; };
+		D785B1B928F00BAC004C1441 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B828F00BAC004C1441 /* Provider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveFeed.swift; sourceTree = "<group>"; };
 		D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCarsharingTests.swift; sourceTree = "<group>"; };
 		D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stable.carsharing.yandex.net-list.json"; sourceTree = "<group>"; };
+		D785B1B628F00759004C1441 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D785B1B828F00BAC004C1441 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */,
 				D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */,
 				D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */,
+				D785B1B628F00759004C1441 /* Location.swift */,
+				D785B1B828F00BAC004C1441 /* Provider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,10 +287,12 @@
 			files = (
 				D75EB85128EE614900779690 /* MainViewController.swift in Sources */,
 				D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */,
+				D785B1B928F00BAC004C1441 /* Provider.swift in Sources */,
 				D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */,
 				D785B1A928EFB501004C1441 /* Car.swift in Sources */,
 				D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */,
 				D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */,
+				D785B1B728F00759004C1441 /* Location.swift in Sources */,
 				D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */,
 				D75EB87D28EE65F800779690 /* ApiClient.swift in Sources */,
 				D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */,

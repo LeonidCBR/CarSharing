@@ -20,7 +20,7 @@ class YandexDriveCarsharingTests: XCTestCase {
     }
 
     func testYandexDriveCarsharing_WhenCustomDataWasProvided_ReturnCars() throws {
-        let jsonText = "{\"cars\":[{\"number\":\"у385км799\", \"model_id\":\"mercedes_e200\"},{\"number\":\"н695ха750\", \"model_id\":\"skoda_octavia\"}]}"
+        let jsonText = "{\"cars\":[{\"number\":\"у385км799\", \"model_id\":\"mercedes_e200\",\"location\":{\"lat\":55.91742991,\"lon\":    37.84304852},\"telematics\":{\"fuel_level\":43,\"fuel_distance\":283}},{\"number\":\"н695ха750\", \"model_id\":\"skoda_octavia\",\"location\":{\"lat\":55.91742991,\"lon\":    37.84304852},\"telematics\":{\"fuel_level\":43,\"fuel_distance\":283}}]}"
         let testJsonData = Data(jsonText.utf8)
 
         let cars = try sut.getCars(from: testJsonData)
@@ -40,6 +40,14 @@ class YandexDriveCarsharingTests: XCTestCase {
         XCTAssertEqual(cars.count, 4000)
         XCTAssertEqual(cars[3999].number, "т271км797")
         XCTAssertEqual(cars[3999].model, "volkswagen_polo_6")
+
+        XCTAssertEqual(cars[1].provider, .yandexDrive)
+        XCTAssertEqual(cars[1].number, "у385км799")
+        XCTAssertEqual(cars[1].model, "mercedes_e200")
+        XCTAssertEqual(cars[1].location.lat, 55.91742991, accuracy: 0.0000001)
+        XCTAssertEqual(cars[1].location.lon, 37.84304852, accuracy: 0.0000001)
+        XCTAssertEqual(cars[1].fuel, 43)
+        XCTAssertEqual(cars[1].distance, 283)
     }
 
 //    func testPerformanceExample() throws {

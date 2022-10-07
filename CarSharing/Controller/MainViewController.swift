@@ -17,39 +17,8 @@ class MainViewController: UIViewController {
 }
 
 /*
-struct Location {
-    let lat: Double
-    let lon: Double
-}
 
-enum Provider {
-    case yandexDrive
-    case cityDrive
-}
-
-protocol Car {
-    var model: String { get }
-    var number: String { get }
-    var location: Location { get }
-    var provider: Provider { get }
-}
-
-struct YandexDriveCar: Car {
-    model: String {
-        return "??"
-    }
-
-    number -> return
-    location -> return
-
-
-}
-
-struct CityDriveCar: Car {
-
-}
 //--------------------------------------
-
 
 protocol CarsharingProvider {
     static let apiUrl
