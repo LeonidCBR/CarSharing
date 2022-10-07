@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ApiClient {
+class ApiClient: ApiClientProtocol {
     private let urlSession: URLSession
 
     init(urlSession: URLSession = .shared) {

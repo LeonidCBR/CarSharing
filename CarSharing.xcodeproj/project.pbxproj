@@ -16,6 +16,15 @@
 		D75EB87F28EE676000779690 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB87E28EE676000779690 /* ApiClientTests.swift */; };
 		D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB88128EE692A00779690 /* MockURLProtocol.swift */; };
 		D75EB88628EE90DD00779690 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB88528EE90DD00779690 /* NetworkError.swift */; };
+		D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A228EFAFB3004C1441 /* CarsViewModel.swift */; };
+		D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */; };
+		D785B1A928EFB501004C1441 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A828EFB501004C1441 /* Car.swift */; };
+		D785B1AB28EFB552004C1441 /* YandexDriveCarsharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */; };
+		D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */; };
+		D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */; };
+		D785B1B128EFBE44004C1441 /* YandexDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */; };
+		D785B1B328EFD2B2004C1441 /* YandexDriveCarsharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */; };
+		D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +50,15 @@
 		D75EB87E28EE676000779690 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		D75EB88128EE692A00779690 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		D75EB88528EE90DD00779690 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D785B1A228EFAFB3004C1441 /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
+		D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCar.swift; sourceTree = "<group>"; };
+		D785B1A828EFB501004C1441 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCarsharing.swift; sourceTree = "<group>"; };
+		D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsharingProvider.swift; sourceTree = "<group>"; };
+		D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientProtocol.swift; sourceTree = "<group>"; };
+		D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveFeed.swift; sourceTree = "<group>"; };
+		D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCarsharingTests.swift; sourceTree = "<group>"; };
+		D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stable.carsharing.yandex.net-list.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +100,10 @@
 		D75EB84B28EE614900779690 /* CarSharing */ = {
 			isa = PBXGroup;
 			children = (
+				D785B1A728EFB405004C1441 /* Protocols */,
 				D75EB88328EE90A300779690 /* API */,
 				D75EB88428EE90C100779690 /* Model */,
+				D785B1A428EFAFB8004C1441 /* ViewModel */,
 				D75EB88728EE914E00779690 /* Controller */,
 				D75EB84C28EE614900779690 /* AppDelegate.swift */,
 				D75EB84E28EE614900779690 /* SceneDelegate.swift */,
@@ -99,6 +119,7 @@
 			children = (
 				D75EB88028EE690700779690 /* Mocks */,
 				D75EB87E28EE676000779690 /* ApiClientTests.swift */,
+				D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */,
 			);
 			path = CarSharingTests;
 			sourceTree = "<group>";
@@ -106,6 +127,7 @@
 		D75EB88028EE690700779690 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */,
 				D75EB88128EE692A00779690 /* MockURLProtocol.swift */,
 			);
 			path = Mocks;
@@ -123,6 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				D75EB88528EE90DD00779690 /* NetworkError.swift */,
+				D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */,
+				D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */,
+				D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +158,24 @@
 				D75EB85028EE614900779690 /* MainViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D785B1A428EFAFB8004C1441 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D785B1A228EFAFB3004C1441 /* CarsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D785B1A728EFB405004C1441 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D785B1A828EFB501004C1441 /* Car.swift */,
+				D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */,
+				D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,10 +280,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75EB85128EE614900779690 /* MainViewController.swift in Sources */,
+				D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */,
+				D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */,
+				D785B1A928EFB501004C1441 /* Car.swift in Sources */,
 				D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */,
+				D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */,
 				D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */,
 				D75EB87D28EE65F800779690 /* ApiClient.swift in Sources */,
+				D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */,
+				D785B1AB28EFB552004C1441 /* YandexDriveCarsharing.swift in Sources */,
 				D75EB88628EE90DD00779690 /* NetworkError.swift in Sources */,
+				D785B1B128EFBE44004C1441 /* YandexDriveFeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +300,7 @@
 			files = (
 				D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */,
 				D75EB87F28EE676000779690 /* ApiClientTests.swift in Sources */,
+				D785B1B328EFD2B2004C1441 /* YandexDriveCarsharingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

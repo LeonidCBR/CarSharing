@@ -33,29 +33,6 @@ protocol Car {
     var location: Location { get }
     var provider: Provider { get }
 }
-*/
-// ***************************************
-
-
-
-/*
-struct Location {
-    lat: Double
-    lon: Double
-}
-
-enum Provider {
-    case yandexDrive
-    case cityDrive
-}
-
-//--------------------------------
-protocol Car {
-    model: String
-    number: String
-    location: Location
-    provider: Provider
-}
 
 struct YandexDriveCar: Car {
     model: String {
