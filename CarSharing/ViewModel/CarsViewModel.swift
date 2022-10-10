@@ -19,19 +19,24 @@ final class CarsViewModel {
     }
 
     func fetchCars() { // completionHandler: (Result<[Car], Error>)->Void ??
+        cars = []
         carsharingProviders.forEach { carsharingProvider in
-            apiClient.downloadData(withUrl: carsharingProvider.apiUrl) { result in
+            apiClient.downloadData(withUrl: carsharingProvider.apiUrl) { [weak self] result in
+                print("DEBUG: Current thread is \(Thread.current)")
                 switch result {
                 case .success(let data):
                     // TODO: parse from data
                     print("DEBUG: carsharing parse from data \(data)")
+                    guard let self = self else { return }
                     if let cars = try? carsharingProvider.getCars(from: data) {
                         self.cars.append(contentsOf: cars)
                     } else {
                         fatalError("DEBUG: Cannot get cars from data \(data)")
+//                        throw NetworkError.unexpectedData
                     }
                 case .failure(let error):
-                    fatalError("DEBUG: API client downloaded data with an error \(error)")
+                    fatalError("DEBUG: Got error - \(error)")
+//                    throw error
                 }
             }
         }

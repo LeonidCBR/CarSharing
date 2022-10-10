@@ -7,11 +7,27 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MapViewController: UIViewController {
+
+    private let carsViewModel: CarsViewModel
+
+    init(with carsViewModel: CarsViewModel) {
+        self.carsViewModel = carsViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        return nil
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+
+    private func configureUI() {
         view.backgroundColor = .blue
+        carsViewModel.fetchCars()
     }
 
 }
