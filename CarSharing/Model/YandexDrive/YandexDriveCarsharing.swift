@@ -10,7 +10,24 @@ import Foundation
 final class YandexDriveCarsharing: CarsharingProvider {
     // TODO: Make as Constant
     let apiUrl = URL(string: "https://dummy-yandex")!
-//    private(set) var cars: [Car] = []
+    private(set) var cars: [Car] = []
+//    {
+//        didSet {
+//            handleFetchedCars?()
+//        }
+//    }
+
+
+
+//    var handleFetchedCars: (() -> Void)?
+
+    func fetchCars(from jsonData: Data) throws {
+        if let yandexDriveFeed = try? JSONDecoder().decode(YandexDriveFeed.self, from: jsonData) {
+            cars = yandexDriveFeed.cars
+        } else {
+            throw NetworkError.unexpectedJSON
+        }
+    }
 
     func getCars(from jsonData: Data) throws -> [Car] {
         if let yandexDriveFeed = try? JSONDecoder().decode(YandexDriveFeed.self, from: jsonData) {

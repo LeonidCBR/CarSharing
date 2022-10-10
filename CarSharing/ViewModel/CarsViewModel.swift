@@ -7,10 +7,10 @@
 
 import Foundation
 
-//protocol CarsViewModelDelegate: AnyObject {
-//    func didGetCars()
-//    func didGetError(_ error: Error)
-//}
+protocol CarsViewModelDelegate: AnyObject {
+    func didGetCars(_ carsharingProvider: CarsharingProvider)
+    func didGetError(_ carsharingProvider: CarsharingProvider, error: Error)
+}
 
 final class CarsViewModel {
     private let apiClient: ApiClientProtocol
@@ -21,47 +21,51 @@ final class CarsViewModel {
 //        }
 //    }
 //    private(set) var errors: [Error] = []
-//    weak var delegate: CarsViewModelDelegate?
+    weak var delegate: CarsViewModelDelegate?
+
+    var numberOfProviders: Int {
+        return carsharingProviders.count
+    }
+
+    func numberOfCars(for carsharingProvider: CarsharingProvider) -> Int {
+        return carsharingProvider.cars.count
+    }
 
     init(carsharingProviders: [CarsharingProvider], apiClient: ApiClientProtocol = ApiClient()) {
         self.carsharingProviders = carsharingProviders
         self.apiClient = apiClient
     }
 
-    func fetchCars(completionHandler: @escaping (Result<[Car], Error>) -> Void) {
-        var cars: [Car] = []
+    func fetchCars() {
+//    func fetchCars(completionHandler: @escaping (Result<[Car], Error>) -> Void) {
 
-        // TODO: Consider to use
         DispatchQueue.concurrentPerform(iterations: carsharingProviders.count) { index in
             print("DEBUG: concurrent perfom with id \(index)")
-        }
+            let carsharingProvider = carsharingProviders[index]
 
-        carsharingProviders.forEach { carsharingProvider in
-            apiClient.downloadData(withUrl: carsharingProvider.apiUrl) { result in
-//                guard let self = self else { return }
+            apiClient.downloadData(withUrl: carsharingProvider.apiUrl) { [weak self] result in
                 print("DEBUG: Current thread is \(Thread.current)")
                 switch result {
                 case .success(let data):
-                    if let fetchedCars = try? carsharingProvider.getCars(from: data) {
-                        cars.append(contentsOf: fetchedCars)
-                    } else {
-                        completionHandler(.failure(NetworkError.unexpectedData))
-//                        DispatchQueue.main.async {
-//                            self.delegate?.didGetError()
-//                        }
+                    do {
+                        try carsharingProvider.fetchCars(from: data)
+                        DispatchQueue.main.async {
+                            self?.delegate?.didGetCars(carsharingProvider)
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            self?.delegate?.didGetError(carsharingProvider,
+                                                        error: NetworkError.unexpectedData)
+                        }
                     }
                 case .failure(let error):
-                    completionHandler(.failure(error))
-//                    DispatchQueue.main.async {
-//                        self.delegate?.didGetError(error)
-//                    }
+                    DispatchQueue.main.async {
+                        self?.delegate?.didGetError(carsharingProvider, error: error)
+                    }
                 }
             }
-        }
 
-        completionHandler(.success(cars))
-//        DispatchQueue.main.async {
-//            self.cars = currentCars
-//        }
+        } //DispatchQueue.concurrentPerform
+
     }
 }

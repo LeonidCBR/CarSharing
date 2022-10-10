@@ -10,6 +10,23 @@ import Foundation
 final class CityDriveCarsharing: CarsharingProvider {
     // TODO: Make as Constant
     let apiUrl = URL(string: "https://dummy-citydrive")!
+    private(set) var cars: [Car] = []
+//    {
+//        didSet {
+//            handleFetchedCars?()
+//        }
+//    }
+
+//    var handleFetchedCars: (() -> Void)?
+
+    
+    func fetchCars(from jsonData: Data) throws {
+        if let cityDriveFeed = try? JSONDecoder().decode(CityDriveFeed.self, from: jsonData) {
+            cars =  cityDriveFeed.cars
+        } else {
+            throw NetworkError.unexpectedJSON
+        }
+    }
 
     func getCars(from jsonData: Data) throws -> [Car] {
         if let cityDriveFeed = try? JSONDecoder().decode(CityDriveFeed.self, from: jsonData) {

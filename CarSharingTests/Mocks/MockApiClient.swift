@@ -13,7 +13,9 @@ class MockApiClient: ApiClientProtocol {
 
     func downloadData(withUrl url: URL,
                       completionHandler: @escaping (Result<Data, NetworkError>) -> Void) {
-        print("DEBUG: Mock api client \(#function)")
-        completionHandler(result)
+        DispatchQueue.init(label: "MockDownLoadData").async { [self] in
+            print("DEBUG: Mock api client \(#function)")
+            completionHandler(result)
+        }
     }
 }

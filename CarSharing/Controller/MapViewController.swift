@@ -32,25 +32,27 @@ class MapViewController: UIViewController {
     }
 
     private func configureUI() {
+        carsViewModel.delegate = self
         view.backgroundColor = .blue
     }
 
     private func fetchCars() {
-        carsViewModel.fetchCars { [weak self] result in
-            guard let self = self else {
-                return
-            }
-
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let fetchedCars):
-                    self.cars = fetchedCars
-                case .failure(let error):
-                    // TODO: Show the error
-                    print("DEBUG: Show error \(error)")
-                }
-            }
-        }
+        carsViewModel.fetchCars()
+//        carsViewModel.fetchCars { [weak self] result in
+//            guard let self = self else {
+//                return
+//            }
+//
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let fetchedCars):
+//                    self.cars = fetchedCars
+//                case .failure(let error):
+//                    // TODO: Show the error
+//                    print("DEBUG: Show error \(error)")
+//                }
+//            }
+//        }
     }
 
     private func updateUI() {
@@ -58,6 +60,17 @@ class MapViewController: UIViewController {
         print("DEBUG: Got cars...")
     }
 
+}
+
+extension MapViewController: CarsViewModelDelegate {
+    func didGetCars(_ carsharingProvider: CarsharingProvider) {
+        let carsCount = carsViewModel.numberOfCars(for: carsharingProvider)
+        print("DEBUG: Get new cars (\(carsCount))")
+    }
+
+    func didGetError(_ carsharingProvider: CarsharingProvider, error: Error) {
+        print("DEBUG: Error! \(error)")
+    }
 }
 
 /*
