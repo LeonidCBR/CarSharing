@@ -10,6 +10,11 @@ import UIKit
 class MapViewController: UIViewController {
 
     private let carsViewModel: CarsViewModel
+    private var cars: [Car] = [] {
+        didSet {
+            updateUI()
+        }
+    }
 
     init(with carsViewModel: CarsViewModel) {
         self.carsViewModel = carsViewModel
@@ -23,11 +28,34 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchCars()
     }
 
     private func configureUI() {
         view.backgroundColor = .blue
-        carsViewModel.fetchCars()
+    }
+
+    private func fetchCars() {
+        carsViewModel.fetchCars { [weak self] result in
+            guard let self = self else {
+                return
+            }
+
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let fetchedCars):
+                    self.cars = fetchedCars
+                case .failure(let error):
+                    // TODO: Show the error
+                    print("DEBUG: Show error \(error)")
+                }
+            }
+        }
+    }
+
+    private func updateUI() {
+        // TODO: Show the cars on the map
+        print("DEBUG: Got cars...")
     }
 
 }
