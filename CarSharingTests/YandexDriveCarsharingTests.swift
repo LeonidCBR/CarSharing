@@ -33,8 +33,9 @@ class YandexDriveCarsharingTests: XCTestCase {
     func testYandexDriveCarsharing_WhenValidDataWasProvided_ReturnCars() throws {
         let bundle = Bundle(for: YandexDriveCarsharingTests.self)
         let jsonUrl = bundle.url(forResource: "stable.carsharing.yandex.net-list",
-                                       withExtension: "json")!
+                                 withExtension: "json")!
         let jsonData = try Data(contentsOf: jsonUrl)
+        
         let cars = try sut.getCars(from: jsonData)
 
         XCTAssertEqual(cars.count, 4000)
@@ -44,8 +45,8 @@ class YandexDriveCarsharingTests: XCTestCase {
         XCTAssertEqual(cars[1].provider, .yandexDrive)
         XCTAssertEqual(cars[1].number, "у385км799")
         XCTAssertEqual(cars[1].model, "mercedes_e200")
-        XCTAssertEqual(cars[1].location.lat, 55.91742991, accuracy: 0.0000001)
-        XCTAssertEqual(cars[1].location.lon, 37.84304852, accuracy: 0.0000001)
+        XCTAssertEqual(cars[1].lat, 55.91742991, accuracy: 0.0000001)
+        XCTAssertEqual(cars[1].lon, 37.84304852, accuracy: 0.0000001)
         XCTAssertEqual(cars[1].fuel, 43)
         XCTAssertEqual(cars[1].distance, 283)
     }

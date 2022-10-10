@@ -27,6 +27,11 @@
 		D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */; };
 		D785B1B728F00759004C1441 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B628F00759004C1441 /* Location.swift */; };
 		D785B1B928F00BAC004C1441 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B828F00BAC004C1441 /* Provider.swift */; };
+		D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */; };
+		D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */; };
+		D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */; };
+		D7CB91E528F3A8B300D0E946 /* CityDriveCarsharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E428F3A8B300D0E946 /* CityDriveCarsharingTests.swift */; };
+		D7CB91E728F3A9EB00D0E946 /* api.citydrive.ru-status.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,11 @@
 		D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stable.carsharing.yandex.net-list.json"; sourceTree = "<group>"; };
 		D785B1B628F00759004C1441 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D785B1B828F00BAC004C1441 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCar.swift; sourceTree = "<group>"; };
+		D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveFeed.swift; sourceTree = "<group>"; };
+		D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCarsharing.swift; sourceTree = "<group>"; };
+		D7CB91E428F3A8B300D0E946 /* CityDriveCarsharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCarsharingTests.swift; sourceTree = "<group>"; };
+		D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api.citydrive.ru-status.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 				D75EB88028EE690700779690 /* Mocks */,
 				D75EB87E28EE676000779690 /* ApiClientTests.swift */,
 				D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */,
+				D7CB91E428F3A8B300D0E946 /* CityDriveCarsharingTests.swift */,
 			);
 			path = CarSharingTests;
 			sourceTree = "<group>";
@@ -131,6 +142,7 @@
 		D75EB88028EE690700779690 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */,
 				D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */,
 				D75EB88128EE692A00779690 /* MockURLProtocol.swift */,
 			);
@@ -148,10 +160,9 @@
 		D75EB88428EE90C100779690 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D7CB91DC28F3A0E600D0E946 /* YandexDrive */,
+				D7CB91DD28F3A0F600D0E946 /* CityDrive */,
 				D75EB88528EE90DD00779690 /* NetworkError.swift */,
-				D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */,
-				D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */,
-				D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */,
 				D785B1B628F00759004C1441 /* Location.swift */,
 				D785B1B828F00BAC004C1441 /* Provider.swift */,
 			);
@@ -182,6 +193,26 @@
 				D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D7CB91DC28F3A0E600D0E946 /* YandexDrive */ = {
+			isa = PBXGroup;
+			children = (
+				D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */,
+				D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */,
+				D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */,
+			);
+			path = YandexDrive;
+			sourceTree = "<group>";
+		};
+		D7CB91DD28F3A0F600D0E946 /* CityDrive */ = {
+			isa = PBXGroup;
+			children = (
+				D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */,
+				D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */,
+				D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */,
+			);
+			path = CityDrive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */,
+				D7CB91E728F3A9EB00D0E946 /* api.citydrive.ru-status.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +322,11 @@
 				D785B1B928F00BAC004C1441 /* Provider.swift in Sources */,
 				D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */,
 				D785B1A928EFB501004C1441 /* Car.swift in Sources */,
+				D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */,
 				D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */,
+				D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */,
 				D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */,
+				D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */,
 				D785B1B728F00759004C1441 /* Location.swift in Sources */,
 				D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */,
 				D75EB87D28EE65F800779690 /* ApiClient.swift in Sources */,
@@ -307,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */,
+				D7CB91E528F3A8B300D0E946 /* CityDriveCarsharingTests.swift in Sources */,
 				D75EB87F28EE676000779690 /* ApiClientTests.swift in Sources */,
 				D785B1B328EFD2B2004C1441 /* YandexDriveCarsharingTests.swift in Sources */,
 			);
