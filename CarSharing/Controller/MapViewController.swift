@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
+    private let mapView = MKMapView()
     private let carsViewModel: CarsViewModel
     private var cars: [Car] = [] {
         didSet {
@@ -32,8 +34,23 @@ class MapViewController: UIViewController {
     }
 
     private func configureUI() {
+        view.backgroundColor = .white
+        configureMap()
         carsViewModel.delegate = self
-        view.backgroundColor = .blue
+    }
+
+    private func configureMap() {
+        view.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        let centerCoordinate = CLLocationCoordinate2D(latitude: 55.7558,
+                                                          longitude: 37.6173)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: centerCoordinate, span: span)
+        mapView.setRegion(region, animated: false)
     }
 
     private func fetchCars() {
