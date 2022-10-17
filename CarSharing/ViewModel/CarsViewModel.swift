@@ -48,7 +48,7 @@ final class CarsViewModel {
                 switch result {
                 case .success(let data):
                     do {
-                        try carsharingProvider.fetchCars(from: data)
+                        try carsharingProvider.parseCars(from: data)
                         DispatchQueue.main.async {
                             self?.delegate?.didGetCars(carsharingProvider)
                         }

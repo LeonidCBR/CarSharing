@@ -23,7 +23,7 @@ class YandexDriveCarsharingTests: XCTestCase {
         let jsonText = "{\"cars\":[{\"number\":\"у385км799\", \"model_id\":\"mercedes_e200\",\"location\":{\"lat\":55.91742991,\"lon\":    37.84304852},\"telematics\":{\"fuel_level\":43,\"fuel_distance\":283}},{\"number\":\"н695ха750\", \"model_id\":\"skoda_octavia\",\"location\":{\"lat\":55.91742991,\"lon\":    37.84304852},\"telematics\":{\"fuel_level\":43,\"fuel_distance\":283}}]}"
         let testJsonData = Data(jsonText.utf8)
 
-        let cars = try sut.getCars(from: testJsonData)
+        let cars = try sut.parseCars(from: testJsonData)
 
         XCTAssertEqual(cars.count, 2)
         XCTAssertEqual(cars[0].number, "у385км799")
@@ -36,7 +36,7 @@ class YandexDriveCarsharingTests: XCTestCase {
                                  withExtension: "json")!
         let jsonData = try Data(contentsOf: jsonUrl)
         
-        let cars = try sut.getCars(from: jsonData)
+        let cars = try sut.parseCars(from: jsonData)
 
         XCTAssertEqual(cars.count, 4000)
         XCTAssertEqual(cars[3999].number, "т271км797")

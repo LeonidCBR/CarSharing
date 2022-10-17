@@ -19,20 +19,21 @@ final class CityDriveCarsharing: CarsharingProvider {
 
 //    var handleFetchedCars: (() -> Void)?
 
-    
-    func fetchCars(from jsonData: Data) throws {
+    @discardableResult
+    func parseCars(from jsonData: Data) throws -> [Car] {
         if let cityDriveFeed = try? JSONDecoder().decode(CityDriveFeed.self, from: jsonData) {
             cars =  cityDriveFeed.cars
+            return cars
         } else {
             throw NetworkError.unexpectedJSON
         }
     }
 
-    func getCars(from jsonData: Data) throws -> [Car] {
-        if let cityDriveFeed = try? JSONDecoder().decode(CityDriveFeed.self, from: jsonData) {
-            return cityDriveFeed.cars
-        } else {
-            throw NetworkError.unexpectedJSON
-        }
-    }
+//    func getCars(from jsonData: Data) throws -> [Car] {
+//        if let cityDriveFeed = try? JSONDecoder().decode(CityDriveFeed.self, from: jsonData) {
+//            return cityDriveFeed.cars
+//        } else {
+//            throw NetworkError.unexpectedJSON
+//        }
+//    }
 }

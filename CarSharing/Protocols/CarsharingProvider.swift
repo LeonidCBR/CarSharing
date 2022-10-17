@@ -14,6 +14,7 @@ protocol CarsharingProvider {
 //    var delegate: CarsharingProviderDelegate? { get set }
 //    color: Double
 
-    func fetchCars(from jsonData: Data) throws
-    func getCars(from jsonData: Data) throws -> [Car]
+    @discardableResult
+    func parseCars(from jsonData: Data) throws -> [Car]
+//    func getCars(from jsonData: Data) throws -> [Car]
 }

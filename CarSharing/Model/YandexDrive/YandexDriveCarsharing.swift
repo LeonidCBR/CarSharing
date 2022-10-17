@@ -21,22 +21,24 @@ final class YandexDriveCarsharing: CarsharingProvider {
 
 //    var handleFetchedCars: (() -> Void)?
 
-    func fetchCars(from jsonData: Data) throws {
+    @discardableResult
+    func parseCars(from jsonData: Data) throws -> [Car] {
         if let yandexDriveFeed = try? JSONDecoder().decode(YandexDriveFeed.self, from: jsonData) {
             cars = yandexDriveFeed.cars
+            return cars
         } else {
             throw NetworkError.unexpectedJSON
         }
     }
 
-    func getCars(from jsonData: Data) throws -> [Car] {
-        if let yandexDriveFeed = try? JSONDecoder().decode(YandexDriveFeed.self, from: jsonData) {
-            // cars = yandexDriveFeed.cars
-            return yandexDriveFeed.cars            
-        } else {
-            throw NetworkError.unexpectedJSON
-        }
-    }
+//    func getCars(from jsonData: Data) throws -> [Car] {
+//        if let yandexDriveFeed = try? JSONDecoder().decode(YandexDriveFeed.self, from: jsonData) {
+//            // cars = yandexDriveFeed.cars
+//            return yandexDriveFeed.cars
+//        } else {
+//            throw NetworkError.unexpectedJSON
+//        }
+//    }
 
 //    struct Models {
 //        let model_id: String,

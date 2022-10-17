@@ -25,7 +25,7 @@ class CityDriveCarsharingTests: XCTestCase {
                                  withExtension: "json")!
         let jsonData = try Data(contentsOf: jsonUrl)
         
-        let cars = try sut.getCars(from: jsonData)
+        let cars = try sut.parseCars(from: jsonData)
 
         XCTAssertEqual(cars.count, 3532)
         XCTAssertEqual(cars[3].provider, .cityDrive)
