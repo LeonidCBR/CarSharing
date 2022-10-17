@@ -16,10 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-//        let ya = YandexDriveCarsharing()
-//        let city = CityDriveCarsharing()
+        let ya = YandexDriveCarsharing()
+        let city = CityDriveCarsharing()
 //        let carsVM = CarsViewModel(carsharingProviders: [ya, city])
-//        window?.rootViewController = MapViewController(with: carsVM)
+        let carsVM = CarsViewModel(carsharingProviders: [ya, city], apiClient: MockApiClient())
+        window?.rootViewController = MapViewController(with: carsVM)
         
         window?.makeKeyAndVisible()
     }
