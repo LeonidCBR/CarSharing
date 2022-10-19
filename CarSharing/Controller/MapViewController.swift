@@ -12,11 +12,11 @@ class MapViewController: UIViewController {
 
     private let mapView = MKMapView()
     private let carsViewModel: CarsViewModel
-    private var cars: [Car] = [] {
-        didSet {
-            updateUI()
-        }
-    }
+//    private var cars: [Car] = [] {
+//        didSet {
+//            updateUI()
+//        }
+//    }
 
     init(with carsViewModel: CarsViewModel) {
         self.carsViewModel = carsViewModel
@@ -72,9 +72,21 @@ class MapViewController: UIViewController {
 //        }
     }
 
-    private func updateUI() {
+//    private func updateUI() {
         // TODO: Show the cars on the map
-        print("DEBUG: Got cars...")
+//        print("DEBUG: Got cars...")
+//    }
+    private func showCars(_ cars: [Car]) {
+        print("DEBUG: Show \(cars.count) cars.")
+        let annotations = cars.map { car -> MKPointAnnotation in
+            let carLocation = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
+            let carAnnotation = MKPointAnnotation()
+            carAnnotation.title = car.model
+            carAnnotation.subtitle = car.number
+            carAnnotation.coordinate = carLocation
+            return carAnnotation
+        }
+        mapView.showAnnotations(annotations, animated: false)
     }
 
 }
@@ -83,6 +95,9 @@ extension MapViewController: CarsViewModelDelegate {
     func didGetCars(_ carsharingProvider: CarsharingProvider) {
         let carsCount = carsViewModel.numberOfCars(for: carsharingProvider)
         print("DEBUG: Get new cars (\(carsCount))")
+//        let cars = carsViewModel.getCarsFor(carsharingProvider: carsharingProvider)
+        let cars = carsViewModel.getCarsForRegion(lat: 55.920682, lon: 37.814619, delta: 0.01, carsharingProvider: carsharingProvider)
+        showCars(cars)
     }
 
     func didGetError(_ carsharingProvider: CarsharingProvider, error: Error) {

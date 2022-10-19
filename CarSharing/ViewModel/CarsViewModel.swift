@@ -27,10 +27,6 @@ final class CarsViewModel {
         return carsharingProviders.count
     }
 
-    func numberOfCars(for carsharingProvider: CarsharingProvider) -> Int {
-        return carsharingProvider.cars.count
-    }
-
     init(carsharingProviders: [CarsharingProvider], apiClient: ApiClientProtocol = ApiClient()) {
         self.carsharingProviders = carsharingProviders
         self.apiClient = apiClient
@@ -67,5 +63,20 @@ final class CarsViewModel {
 
         } //DispatchQueue.concurrentPerform
 
+    }
+
+    func numberOfCars(for carsharingProvider: CarsharingProvider) -> Int {
+        return carsharingProvider.cars.count
+    }
+
+    func getCarsFor(carsharingProvider: CarsharingProvider) -> [Car] {
+        return carsharingProvider.cars
+    }
+
+    func getCarsForRegion(lat: Double, lon: Double, delta: Double, carsharingProvider: CarsharingProvider) -> [Car] {
+        return carsharingProvider.cars.filter { car in
+            return (car.lat < lat + delta) && (car.lat > lat - delta)
+            && (car.lon < lon + delta) && (car.lon > lon - delta)
+        }
     }
 }
