@@ -38,6 +38,7 @@
 		D7CB91E728F3A9EB00D0E946 /* api.citydrive.ru-status.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */; };
 		D7CB91E928F3CA5600D0E946 /* CarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E828F3CA5600D0E946 /* CarsViewModelTests.swift */; };
 		D7CB91EB28F3CACF00D0E946 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91EA28F3CACF00D0E946 /* MockApiClient.swift */; };
+		D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api.citydrive.ru-status.json"; sourceTree = "<group>"; };
 		D7CB91E828F3CA5600D0E946 /* CarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModelTests.swift; sourceTree = "<group>"; };
 		D7CB91EA28F3CACF00D0E946 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				D785B1B628F00759004C1441 /* Location.swift */,
 				D785B1B828F00BAC004C1441 /* Provider.swift */,
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
+				D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */,
 				D785B1A928EFB501004C1441 /* Car.swift in Sources */,
 				D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */,
+				D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */,
 				D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */,
 				D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */,
 				D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */,

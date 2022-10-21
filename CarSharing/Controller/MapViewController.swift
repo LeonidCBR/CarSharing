@@ -85,24 +85,18 @@ extension MapViewController: CarsViewModelDelegate {
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? CarAnnotation else { return nil }
+        guard let carAnnotation = annotation as? CarAnnotation else { return nil }
         let annotationId = "AnnotationIdentifier"
-        let annotationView: MKAnnotationView
-        if let annotationV = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) {
-            annotationV.annotation = annotation
+        let annotationView: CarAnnotationView
+        if let annotationV = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as? CarAnnotationView {
+            annotationV.annotation = carAnnotation
             annotationView = annotationV
         } else {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
+            annotationView = CarAnnotationView(annotation: carAnnotation, reuseIdentifier: annotationId)
             annotationView.canShowCallout = true
         }
-        switch annotation.provider {
-        case .yandexDrive:
-            annotationView.image = UIImage(named: "steering-wheel-blue")
-        case .cityDrive:
-            annotationView.image = UIImage(named: "steering-wheel-green")
-        }
-        annotationView.frame.size = CGSize(width: 20, height: 20)
         return annotationView
     }
 
 }
+
