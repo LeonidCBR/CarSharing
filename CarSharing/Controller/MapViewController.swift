@@ -12,11 +12,6 @@ class MapViewController: UIViewController {
 
     private let mapView = MKMapView()
     private let carsViewModel: CarsViewModel
-//    private var cars: [Car] = [] {
-//        didSet {
-//            updateUI()
-//        }
-//    }
 
     init(with carsViewModel: CarsViewModel) {
         self.carsViewModel = carsViewModel
@@ -58,41 +53,10 @@ class MapViewController: UIViewController {
 
     private func fetchCars() {
         carsViewModel.fetchCars()
-//        carsViewModel.fetchCars { [weak self] result in
-//            guard let self = self else {
-//                return
-//            }
-//
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let fetchedCars):
-//                    self.cars = fetchedCars
-//                case .failure(let error):
-//                    // TODO: Show the error
-//                    print("DEBUG: Show error \(error)")
-//                }
-//            }
-//        }
     }
 
-//    private func updateUI() {
-        // TODO: Show the cars on the map
-//        print("DEBUG: Got cars...")
-//    }
     private func showCars(_ cars: [Car]) {
-        print("DEBUG: Show \(cars.count) cars.")
-        let annotations = cars.map { car -> MKPointAnnotation in
-            let carLocation = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
-            let carAnnotation = MKPointAnnotation()
-            carAnnotation.title = car.model
-            carAnnotation.subtitle = car.number
-            carAnnotation.coordinate = carLocation
-
-            // TODO: Consider to subclass MKPointAnnotation
-            // and to add a field .provider
-
-            return carAnnotation
-        }
+        let annotations = cars.map { CarAnnotation(with: $0) }
         mapView.showAnnotations(annotations, animated: false)
     }
 
@@ -121,7 +85,8 @@ extension MapViewController: CarsViewModelDelegate {
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else { return nil }
+        guard let annotation = annotation as? CarAnnotation else { return nil }
+//        guard annotation is MKPointAnnotation else { return nil }
 
         let annotationId = "AnnotationIdentifier"
         let annotationView: MKAnnotationView
@@ -137,9 +102,14 @@ extension MapViewController: MKMapViewDelegate {
 //        annotationView.tintColor = .red
 //        annotationView.backgroundColor = .red
         annotationView.image = UIImage(systemName: "circle")
-        annotationView.layer.borderColor = UIColor.blue.cgColor
         annotationView.layer.borderWidth = 3.0
         annotationView.layer.cornerRadius = annotationView.frame.width / 2
+        switch annotation.provider {
+        case .yandexDrive:
+            annotationView.layer.borderColor = UIColor.blue.cgColor
+        case .cityDrive:
+            annotationView.layer.borderColor = UIColor.green.cgColor
+        }
         return annotationView
     }
 
