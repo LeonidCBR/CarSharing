@@ -19,5 +19,6 @@ class CarAnnotation: NSObject, MKAnnotation {
         title = car.model
         subtitle = car.number
         provider = car.provider
+        super.init()
     }
 }
