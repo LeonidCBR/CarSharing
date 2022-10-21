@@ -46,6 +46,9 @@ class MapViewController: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        mapView.delegate = self
+
         let centerCoordinate = CLLocationCoordinate2D(latitude: 55.7558,
                                                           longitude: 37.6173)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -84,12 +87,19 @@ class MapViewController: UIViewController {
             carAnnotation.title = car.model
             carAnnotation.subtitle = car.number
             carAnnotation.coordinate = carLocation
+
+            // TODO: Consider to subclass MKPointAnnotation
+            // and to add a field .provider
+
             return carAnnotation
         }
         mapView.showAnnotations(annotations, animated: false)
     }
 
 }
+
+
+// MARK: - CarsViewModelDelegate
 
 extension MapViewController: CarsViewModelDelegate {
     func didGetCars(_ carsharingProvider: CarsharingProvider) {
@@ -105,107 +115,32 @@ extension MapViewController: CarsViewModelDelegate {
     }
 }
 
-/*
 
-//--------------------------------------
+// MARK: - MKMapViewDelegate
 
-protocol CarsharingProvider {
-    static let apiUrl
-    cars: [Car]
-    color: Double
-    parse(from data: Data) // or init???
-}
+extension MapViewController: MKMapViewDelegate {
 
-class YandexDriveCarsharing: CarsharingProvider {
-    static let apiUrl = "yandex.ru"
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
 
-    struct Models {
-        model_id: String,
-        imageUrl: String, // json key "image"
-        name: String
-    }
-
-    private models: Models // cotainer
-
-    cars: [YandexDriveCar] = []
-
-    init() {}
-
-    parse(from data: Data) {
-        cars = JSONDecoder.decode(YandexDriveCarsharing.self, from: data)
-    }
-}
-
-class CityDriveCarsharing: CarsharingProvider {
-    cars: [CityDriveCar] = []
-}
-
-//----------------------------------------
-
-class ApiClient {
-    urlSession: URLSession
-    init(urlSession: URLSession = URLSession.shared) {
-        self.urlSession = urlSession
-    }
-    downloadData(withUrl url: URL) -> Result<Data, Error>{
-        ...
-    }
-}
-
-class CarsViewModel {
-    private(set) let carsharingProviders: [CarsharingProvider]
-    //cars: [Car] {
-    //    return carsharingProviders.cars.flatMap { $0 } // return all cars
-    //}
-    private cars: [Car]
-    apiClient: ApiClient
-
-    countOfCars: Int {
-        return cars.count
-    }
-
-    init(carsharingProviders: [CarsharingProvider] = [YandexDriveCarsharing(), CityDriveCarsharing()], apiClient: ApiClient = ApiCLient()) {
-        self.carsharingProviders = carsharingProviders
-        self.apiClient = apiClient
-    }
-
-    func fetchCars() throws {
-        carsharingProviders.forEach { carsharingProvider in // forEach
-            let result = apiClient.downloadData(withUrl: carsharingProvider.url)
-            if case .success(let data) {
-                carsharingProvider.parse(from: data)
-                //return carsharingProvider
-            } else {
-                // throw error
-                fatalError("!!!")
-            }
-
+        let annotationId = "AnnotationIdentifier"
+        let annotationView: MKAnnotationView
+        if let annotationV = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) {
+            annotationV.annotation = annotation
+            annotationView = annotationV
+        } else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
+            annotationView.canShowCallout = true
         }
+//        let pinImage = UIImage(systemName: "circle")?.withTintColor(.red, renderingMode: .alwaysTemplate)
+//        annotationView.image = pinImage
+//        annotationView.tintColor = .red
+//        annotationView.backgroundColor = .red
+        annotationView.image = UIImage(systemName: "circle")
+        annotationView.layer.borderColor = UIColor.blue.cgColor
+        annotationView.layer.borderWidth = 3.0
+        annotationView.layer.cornerRadius = annotationView.frame.width / 2
+        return annotationView
     }
+
 }
-
-
-class ViewController {
-    //carsharingProviders: [CarsharingProvider] = []
-    carsViewModel: CarViewModel
-
-    viewDidLoad() {
-        fetchData()
-        updateUI()
-    }
-
-    init(withCarsViewModel: carsViewModel) {
-        self.carsViewModel = carsViewModel
-    }
-
-    fetchData() {
-        carsViewModel = carsViewModel()
-        // viewDidAppear ???
-        carsViewModel.fetchCars()
-    }
-
-    updateUI() {
-        // todo: for each provider -> show cars on the map
-    }
-}
-*/
