@@ -86,8 +86,6 @@ extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? CarAnnotation else { return nil }
-//        guard annotation is MKPointAnnotation else { return nil }
-
         let annotationId = "AnnotationIdentifier"
         let annotationView: MKAnnotationView
         if let annotationV = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) {
@@ -97,19 +95,13 @@ extension MapViewController: MKMapViewDelegate {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
             annotationView.canShowCallout = true
         }
-//        let pinImage = UIImage(systemName: "circle")?.withTintColor(.red, renderingMode: .alwaysTemplate)
-//        annotationView.image = pinImage
-//        annotationView.tintColor = .red
-//        annotationView.backgroundColor = .red
-        annotationView.image = UIImage(systemName: "circle")
-        annotationView.layer.borderWidth = 3.0
-        annotationView.layer.cornerRadius = annotationView.frame.width / 2
         switch annotation.provider {
         case .yandexDrive:
-            annotationView.layer.borderColor = UIColor.blue.cgColor
+            annotationView.image = UIImage(named: "steering-wheel-blue")
         case .cityDrive:
-            annotationView.layer.borderColor = UIColor.green.cgColor
+            annotationView.image = UIImage(named: "steering-wheel-green")
         }
+        annotationView.frame.size = CGSize(width: 20, height: 20)
         return annotationView
     }
 
