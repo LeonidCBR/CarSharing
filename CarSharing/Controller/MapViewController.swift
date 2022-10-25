@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     private let mapView = MKMapView()
     private let carsViewModel: CarsViewModel
     private var carAnnotations: [CarAnnotation] = []
+    private let threshold: CLLocationDegrees = 0.03 // 0.02
 
     init(with carsViewModel: CarsViewModel) {
         self.carsViewModel = carsViewModel
@@ -45,18 +46,16 @@ class MapViewController: UIViewController {
 
         mapView.delegate = self
 
+        // TODO: - Show user's location
+
         let centerCoordinate = CLLocationCoordinate2D(latitude: 55.918953,
                                                           longitude: 37.815211)
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: centerCoordinate, span: span)
-        print("DEBUG: Set region")
         mapView.setRegion(region, animated: false)
     }
 
     private func showAppropriateCars() {
-        print("DEBUG: \(#function)")
-
-        // find cars on the region
         let latitudeDelta = mapView.region.span.latitudeDelta
         let longitudeDelta = mapView.region.span.longitudeDelta
         let center = mapView.region.center
@@ -67,9 +66,6 @@ class MapViewController: UIViewController {
             && (carAnnotation.coordinate.longitude < center.longitude + longitudeDelta)
             && (carAnnotation.coordinate.longitude > center.longitude - longitudeDelta)
         }
-
-
-        print("DEBUG: Count of the appropriate cars is \(appropriateCarAnnotations.count)")
 
         // TODO: Consider to remove other cars
         // ...
@@ -84,40 +80,21 @@ class MapViewController: UIViewController {
         carsViewModel.fetchCars()
     }
 
-//    private func showCars(_ cars: [Car]) {
-//        let annotations = cars.map { CarAnnotation(with: $0) }
-//        mapView.showAnnotations(annotations, animated: false)
-//    }
-
-    private func updateCars(_ cars: [Car], provider: Provider) {
-//        let oldAnnotations = mapView.annotations.filter { annotation in
-//            if let carAnnotation = annotation as? CarAnnotation {
-//                return carAnnotation.provider == provider
-//            } else {
-//                return false
-//            }
-//        }
-
+    private func updateCarAnnotations(for cars: [Car], with provider: Provider) {
         carAnnotations.removeAll { return $0.provider == provider }
-//        if oldAnnotations.count > 0 {
-//            mapView.removeAnnotations(oldAnnotations)
-//        }
-
-
         let newCarAnnotations = cars.map { CarAnnotation(with: $0) }
-//        mapView.addAnnotations(newCarAnnotations)
         carAnnotations.append(contentsOf: newCarAnnotations)
-
         showAppropriateCars()
     }
 
     private func removeAllCarsFromMap() {
-        print("DEBUG: hide cars if they are shown")
-//        mapView.annotations.forEach { annotation in
-//            mapView.view(for: annotation)?.isHidden = true
-//        }
-        let annotations = mapView.annotations
-        mapView.removeAnnotations(annotations)
+        mapView.removeAnnotations(mapView.annotations)
+        /*
+         https://stackoverflow.com/questions/3027392/how-to-delete-all-annotations-on-a-mkmapview
+
+         However the previous line of code will remove all map annotations "PINS" from the map,
+         including the user location pin "Blue Pin".
+         */
     }
 
 }
@@ -128,15 +105,9 @@ class MapViewController: UIViewController {
 extension MapViewController: CarsViewModelDelegate {
     func didGetCars(_ carsharingProvider: CarsharingProvider) {
         let carsCount = carsViewModel.numberOfCars(for: carsharingProvider)
-        print("DEBUG: Get new cars (\(carsCount))")
-
-
-//        let cars = carsViewModel.getCarsForRegion(lat: 55.920682, lon: 37.814619, delta: 0.01, carsharingProvider: carsharingProvider)
-//        showCars(cars)
-
-
+        print("DEBUG: Get new cars (\(carsCount)) by provider \(carsharingProvider.provider)")
         let cars = carsViewModel.getAllCarsFor(carsharingProvider: carsharingProvider)
-        updateCars(cars, provider: carsharingProvider.provider)
+        updateCarAnnotations(for: cars, with: carsharingProvider.provider)
     }
 
     func didGetError(_ carsharingProvider: CarsharingProvider, error: Error) {
@@ -150,18 +121,18 @@ extension MapViewController: CarsViewModelDelegate {
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        print("DEBUG: \(#function)")
-        guard mapView.region.span.longitudeDelta < 0.03 else { return nil }
+//        print("DEBUG: \(#function)")
+        guard mapView.region.span.longitudeDelta < threshold else { return nil }
 
         guard let carAnnotation = annotation as? CarAnnotation else { return nil }
         let annotationId = "AnnotationIdentifier"
         let annotationView: CarAnnotationView
         if let annotationV = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as? CarAnnotationView {
-            print("DEBUG: Reuse annotation view")
+//            print("DEBUG: Reuse annotation view")
             annotationV.annotation = carAnnotation
             annotationView = annotationV
         } else {
-            print("DEBUG: New annotation view")
+//            print("DEBUG: New annotation view")
             annotationView = CarAnnotationView(annotation: carAnnotation, reuseIdentifier: annotationId)
             annotationView.canShowCallout = true
         }
@@ -176,13 +147,11 @@ extension MapViewController: MKMapViewDelegate {
 
         print("DEBUG: Region did change. Longitude delta = \(mapView.region.span.longitudeDelta)")
 
-        let threshold: CLLocationDegrees = 0.03 // 0.02
         if mapView.region.span.longitudeDelta < threshold {
             showAppropriateCars()
         } else {
             removeAllCarsFromMap()
         }
-
     }
 
 }

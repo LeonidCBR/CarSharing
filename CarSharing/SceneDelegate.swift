@@ -15,13 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        
         let ya = YandexDriveCarsharing()
         let city = CityDriveCarsharing()
 //        let carsVM = CarsViewModel(carsharingProviders: [ya, city])
         let carsVM = CarsViewModel(carsharingProviders: [ya, city], apiClient: MockApiClient())
         window?.rootViewController = MapViewController(with: carsVM)
-        
         window?.makeKeyAndVisible()
     }
 

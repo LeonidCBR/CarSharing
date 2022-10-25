@@ -15,12 +15,6 @@ protocol CarsViewModelDelegate: AnyObject {
 final class CarsViewModel {
     private let apiClient: ApiClientProtocol
     private let carsharingProviders: [CarsharingProvider]
-//    private(set) var cars: [Car] = [] {
-//        didSet {
-//            delegate?.didGetCars()
-//        }
-//    }
-//    private(set) var errors: [Error] = []
     weak var delegate: CarsViewModelDelegate?
 
     var numberOfProviders: Int {
@@ -33,8 +27,6 @@ final class CarsViewModel {
     }
 
     func fetchCars() {
-//    func fetchCars(completionHandler: @escaping (Result<[Car], Error>) -> Void) {
-
         DispatchQueue.concurrentPerform(iterations: carsharingProviders.count) { index in
             print("DEBUG: concurrent perfom with id \(index)")
             let carsharingProvider = carsharingProviders[index]
@@ -62,7 +54,6 @@ final class CarsViewModel {
             }
 
         } //DispatchQueue.concurrentPerform
-
     }
 
     func numberOfCars(for carsharingProvider: CarsharingProvider) -> Int {
@@ -73,10 +64,4 @@ final class CarsViewModel {
         return carsharingProvider.cars
     }
 
-//    func getCarsForRegion(lat: Double, lon: Double, delta: Double, carsharingProvider: CarsharingProvider) -> [Car] {
-//        return carsharingProvider.cars.filter { car in
-//            return (car.lat < lat + delta) && (car.lat > lat - delta)
-//            && (car.lon < lon + delta) && (car.lon > lon - delta)
-//        }
-//    }
 }
