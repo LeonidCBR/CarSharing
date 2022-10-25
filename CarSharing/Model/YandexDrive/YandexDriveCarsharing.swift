@@ -10,6 +10,7 @@ import Foundation
 final class YandexDriveCarsharing: CarsharingProvider {
     // TODO: Make as Constant
     let apiUrl = URL(string: "https://dummy-yandex")!
+    let provider: Provider = .yandexDrive
     private(set) var cars: [Car] = []
 //    {
 //        didSet {

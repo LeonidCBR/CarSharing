@@ -9,6 +9,12 @@ import Foundation
 import MapKit
 
 class CarAnnotationView: MKAnnotationView {
+    override var annotation: MKAnnotation? {
+        didSet {
+            updateUI()
+        }
+    }
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 8)
@@ -17,7 +23,14 @@ class CarAnnotationView: MKAnnotationView {
 
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        updateUI()
+    }
 
+    required init?(coder aDecoder: NSCoder) {
+        return nil
+    }
+
+    private func updateUI() {
         titleLabel.text = annotation?.title ?? ""
         addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -34,9 +47,4 @@ class CarAnnotationView: MKAnnotationView {
             frame.size = CGSize(width: 20, height: 20)
         }
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        return nil
-    }
-
 }

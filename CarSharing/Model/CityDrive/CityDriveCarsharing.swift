@@ -10,6 +10,7 @@ import Foundation
 final class CityDriveCarsharing: CarsharingProvider {
     // TODO: Make as Constant
     let apiUrl = URL(string: "https://dummy-citydrive")!
+    let provider: Provider = .cityDrive
     private(set) var cars: [Car] = []
 //    {
 //        didSet {

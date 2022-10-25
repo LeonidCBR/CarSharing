@@ -69,14 +69,14 @@ final class CarsViewModel {
         return carsharingProvider.cars.count
     }
 
-    func getCarsFor(carsharingProvider: CarsharingProvider) -> [Car] {
+    func getAllCarsFor(carsharingProvider: CarsharingProvider) -> [Car] {
         return carsharingProvider.cars
     }
 
-    func getCarsForRegion(lat: Double, lon: Double, delta: Double, carsharingProvider: CarsharingProvider) -> [Car] {
-        return carsharingProvider.cars.filter { car in
-            return (car.lat < lat + delta) && (car.lat > lat - delta)
-            && (car.lon < lon + delta) && (car.lon > lon - delta)
-        }
-    }
+//    func getCarsForRegion(lat: Double, lon: Double, delta: Double, carsharingProvider: CarsharingProvider) -> [Car] {
+//        return carsharingProvider.cars.filter { car in
+//            return (car.lat < lat + delta) && (car.lat > lat - delta)
+//            && (car.lon < lon + delta) && (car.lon > lon - delta)
+//        }
+//    }
 }
