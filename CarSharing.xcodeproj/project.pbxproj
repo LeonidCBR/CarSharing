@@ -132,6 +132,7 @@
 				D785B1A728EFB405004C1441 /* Protocols */,
 				D75EB88328EE90A300779690 /* API */,
 				D75EB88428EE90C100779690 /* Model */,
+				D7C5AB752907A9BC00CC60C0 /* View */,
 				D785B1A428EFAFB8004C1441 /* ViewModel */,
 				D75EB88728EE914E00779690 /* Controller */,
 				D75EB84C28EE614900779690 /* AppDelegate.swift */,
@@ -183,7 +184,6 @@
 				D785B1B628F00759004C1441 /* Location.swift */,
 				D785B1B828F00BAC004C1441 /* Provider.swift */,
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
-				D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +222,14 @@
 				D7B5ED8628FCE6D800F2800C /* MockApiClient.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		D7C5AB752907A9BC00CC60C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D7CB91DC28F3A0E600D0E946 /* YandexDrive */ = {
