@@ -21,7 +21,15 @@ class MockApiClient: ApiClientProtocol {
             fatalError("DEBUG: Wrong url!")
         }
         let mockData = try! Data(contentsOf: mockUrl)
-        let result: Result<Data, NetworkError> = .success(mockData)
-        completionHandler(result)
+        let result: Result<Data, NetworkError>
+
+        result = .success(mockData)
+//        result = .failure(.unauthorized)
+
+        let waitSeconds = Double(Int.random(in: 2...5))
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + waitSeconds) {
+            completionHandler(result)
+        }
     }
 }

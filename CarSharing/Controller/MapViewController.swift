@@ -111,7 +111,18 @@ extension MapViewController: CarsViewModelDelegate {
     }
 
     func didGetError(_ carsharingProvider: CarsharingProvider, error: Error) {
-        print("DEBUG: Error! \(error)")
+        print("DEBUG: ERROR! \(error)")
+        let alertController = UIAlertController(title: "ERROR (\(carsharingProvider.provider))",
+                                                message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(action)
+
+        /*
+         if it's already presented
+         2022-10-26 10:14:18.076552+1000 CarSharing[2782:1062478] [Presentation] Attempt to present <UIAlertController: 0x101a35a00> on <CarSharing.MapViewController: 0x100f0acc0> (from <CarSharing.MapViewController: 0x100f0acc0>) which is already presenting <UIAlertController: 0x101a06600>.
+         */
+        present(alertController, animated: true)
     }
 }
 
