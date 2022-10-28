@@ -107,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D754DBDC290B81FB00DC00FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D75EB85528EE614E00779690 /* Assets.xcassets */,
+				D75EB85728EE614E00779690 /* LaunchScreen.storyboard */,
+				D75EB85A28EE614E00779690 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D75EB84028EE614900779690 = {
 			isa = PBXGroup;
 			children = (
@@ -135,11 +145,9 @@
 				D7C5AB752907A9BC00CC60C0 /* View */,
 				D785B1A428EFAFB8004C1441 /* ViewModel */,
 				D75EB88728EE914E00779690 /* Controller */,
+				D754DBDC290B81FB00DC00FA /* Resources */,
 				D75EB84C28EE614900779690 /* AppDelegate.swift */,
 				D75EB84E28EE614900779690 /* SceneDelegate.swift */,
-				D75EB85528EE614E00779690 /* Assets.xcassets */,
-				D75EB85728EE614E00779690 /* LaunchScreen.storyboard */,
-				D75EB85A28EE614E00779690 /* Info.plist */,
 			);
 			path = CarSharing;
 			sourceTree = "<group>";
@@ -539,7 +547,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 973295K87L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CarSharing/Info.plist;
+				INFOPLIST_FILE = CarSharing/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -566,7 +574,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 973295K87L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CarSharing/Info.plist;
+				INFOPLIST_FILE = CarSharing/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
