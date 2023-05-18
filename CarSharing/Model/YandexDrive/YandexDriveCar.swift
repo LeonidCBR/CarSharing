@@ -8,15 +8,19 @@
 import Foundation
 
 struct YandexDriveCar: Car, Decodable {
+    let providerType: ProviderType = .yandexDrive
 
     struct Telematics: Decodable {
-        let fuel_level: Int
-        let fuel_distance: Int
+        let fuelLevel: Int
+        let fuelDistance: Int
+        enum CodingKeys: String, CodingKey {
+            case fuelLevel = "fuel_level"
+            case fuelDistance = "fuel_distance"
+        }
     }
 
     private let location: Location
     let telematics: Telematics
-    let provider: Provider = .yandexDrive
     let model: String
     let number: String
 
@@ -29,11 +33,11 @@ struct YandexDriveCar: Car, Decodable {
     }
 
     var fuel: Int {
-        return telematics.fuel_level
+        return telematics.fuelLevel
     }
 
     var distance: Int {
-        return telematics.fuel_distance
+        return telematics.fuelDistance
     }
 
     enum CodingKeys: String, CodingKey {

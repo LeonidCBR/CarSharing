@@ -12,7 +12,7 @@ protocol Car {
     var number: String { get }
     var lat: Double { get }
     var lon: Double { get }
-    var provider: Provider { get }
+    var providerType: ProviderType { get }
     var fuel: Int { get }
     var distance: Int { get }
 }

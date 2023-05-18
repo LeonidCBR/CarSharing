@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct YandexDriveFeed: Decodable {
+struct YandexDriveFeed: Feed, Decodable {
     let cars: [YandexDriveCar]
+
+    var allCars: [Car] {
+        return cars
+    }
 
     enum CodingKeys: String, CodingKey {
         case cars = "cars"

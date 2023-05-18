@@ -6,14 +6,31 @@
 //
 
 import Foundation
+/*
+struct CityDriveCarsharing: CarsharingProvider {
+    var isEnabled: Bool
+    var error: Error?
 
-final class CityDriveCarsharing: CarsharingProvider {
+    let apiClient: ApiClientProtocol
+//    let apiUrl = URL(string: "https://dummy-citydrive")!
 
-    // TODO: Make as Constant
-    
-    let apiUrl = URL(string: "https://dummy-citydrive")!
-    let provider: Provider = .cityDrive
+    let providerType: ProviderType = .cityDrive
     private(set) var cars: [Car] = []
+
+
+    init(with apiClient: ApiClientProtocol) {
+        self.apiClient = apiClient
+    }
+
+    init() {
+        let cityDriveSessionConfig = URLSessionConfiguration.default
+//        cityDriveSessionConfig.httpAdditionalHeaders = [
+//            "Authorization": "OAuth \(token)"
+//        ]
+        let cityDriveSession = URLSession(configuration: cityDriveSessionConfig)
+        apiClient = ApiClient(urlSession: cityDriveSession)
+    }
+
 
     @discardableResult
     func parseCars(from jsonData: Data) throws -> [Car] {
@@ -25,4 +42,12 @@ final class CityDriveCarsharing: CarsharingProvider {
         }
     }
 
+    func downloadCars(completionHandler: @escaping (Result<[Car], NetworkError>) -> Void) {
+        print("DEBUG: TODO: Implement downloading cars of city drive.")
+        let urlString = "https://dummy.url"
+        let request = URLRequest(url: URL(string: urlString)!)
+        downloadCars(with: request, completionHandler: completionHandler)
+    }
+
 }
+*/

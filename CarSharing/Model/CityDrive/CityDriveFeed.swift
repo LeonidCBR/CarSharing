@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct CityDriveFeed: Decodable {
+struct CityDriveFeed: Feed, Decodable {
     let cars: [CityDriveCar]
+
+    var allCars: [Car] {
+        return cars
+    }
 
     enum CodingKeys: String, CodingKey {
         case cars = "cars"

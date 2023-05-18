@@ -10,7 +10,7 @@ import MapKit
 
 class CarAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
-    let provider: Provider
+    let providerType: ProviderType
     let title: String?
     let subtitle: String?
 
@@ -18,7 +18,7 @@ class CarAnnotation: NSObject, MKAnnotation {
         coordinate = CLLocationCoordinate2D(latitude: car.lat, longitude: car.lon)
         title = car.model
         subtitle = car.number
-        provider = car.provider
+        providerType = car.providerType
         super.init()
     }
 }

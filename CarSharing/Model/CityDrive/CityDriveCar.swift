@@ -8,12 +8,11 @@
 import Foundation
 
 struct CityDriveCar: Car, Decodable {
-
+    let providerType: ProviderType = .cityDrive
     let lat: Double
     let lon: Double
     let distance: Int
     let fuel: Int
-    let provider: Provider = .cityDrive
     let model: String
     let number: String
 

@@ -42,8 +42,8 @@ class CarAnnotationView: MKAnnotationView {
     private func updateUI() {
         titleLabel.text = annotation?.title ?? ""
 
-        guard let provider = (annotation as? CarAnnotation)?.provider else { return }
-        switch provider {
+        guard let providerType = (annotation as? CarAnnotation)?.providerType else { return }
+        switch providerType {
         case .yandexDrive:
             image = UIImage(named: "steering-wheel-blue")
         case .cityDrive:

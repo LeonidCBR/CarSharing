@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70AC62D2A15DF4D0010993C /* CarsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */; };
+		D70AC62F2A15E3650010993C /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC62E2A15E3650010993C /* Feed.swift */; };
+		D70AC6312A15E5990010993C /* CarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC6302A15E5990010993C /* CarError.swift */; };
+		D70AC6332A1605520010993C /* CarsDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC6322A1605520010993C /* CarsDecoderTests.swift */; };
+		D70AC6352A160AB40010993C /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC6342A160AB40010993C /* NetworkProviderTests.swift */; };
 		D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84C28EE614900779690 /* AppDelegate.swift */; };
 		D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84E28EE614900779690 /* SceneDelegate.swift */; };
 		D75EB85128EE614900779690 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB85028EE614900779690 /* MapViewController.swift */; };
 		D75EB85628EE614E00779690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75EB85528EE614E00779690 /* Assets.xcassets */; };
 		D75EB85928EE614E00779690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75EB85728EE614E00779690 /* LaunchScreen.storyboard */; };
-		D75EB87D28EE65F800779690 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB87C28EE65F800779690 /* ApiClient.swift */; };
-		D75EB87F28EE676000779690 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB87E28EE676000779690 /* ApiClientTests.swift */; };
+		D75EB87D28EE65F800779690 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB87C28EE65F800779690 /* NetworkProvider.swift */; };
 		D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB88128EE692A00779690 /* MockURLProtocol.swift */; };
 		D75EB88628EE90DD00779690 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB88528EE90DD00779690 /* NetworkError.swift */; };
 		D768742A29022A19000A0084 /* CarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768742929022A19000A0084 /* CarAnnotation.swift */; };
@@ -22,22 +26,14 @@
 		D785B1A928EFB501004C1441 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A828EFB501004C1441 /* Car.swift */; };
 		D785B1AB28EFB552004C1441 /* YandexDriveCarsharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */; };
 		D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */; };
-		D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */; };
 		D785B1B128EFBE44004C1441 /* YandexDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */; };
-		D785B1B328EFD2B2004C1441 /* YandexDriveCarsharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */; };
-		D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */; };
+		D785B1B528F00180004C1441 /* yandexdrive.json in Resources */ = {isa = PBXBuildFile; fileRef = D785B1B428F00180004C1441 /* yandexdrive.json */; };
 		D785B1B728F00759004C1441 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B628F00759004C1441 /* Location.swift */; };
-		D785B1B928F00BAC004C1441 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B828F00BAC004C1441 /* Provider.swift */; };
-		D7B5ED8728FCE6D900F2800C /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ED8628FCE6D800F2800C /* MockApiClient.swift */; };
-		D7B5ED8A28FCEA5E00F2800C /* stable.carsharing.yandex.net-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ED8828FCEA5E00F2800C /* stable.carsharing.yandex.net-list.json */; };
-		D7B5ED8B28FCEA5E00F2800C /* api.citydrive.ru-status.json in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ED8928FCEA5E00F2800C /* api.citydrive.ru-status.json */; };
+		D785B1B928F00BAC004C1441 /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B828F00BAC004C1441 /* ProviderType.swift */; };
 		D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */; };
 		D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */; };
 		D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */; };
-		D7CB91E528F3A8B300D0E946 /* CityDriveCarsharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E428F3A8B300D0E946 /* CityDriveCarsharingTests.swift */; };
-		D7CB91E728F3A9EB00D0E946 /* api.citydrive.ru-status.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */; };
-		D7CB91E928F3CA5600D0E946 /* CarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E828F3CA5600D0E946 /* CarsViewModelTests.swift */; };
-		D7CB91EB28F3CACF00D0E946 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91EA28F3CACF00D0E946 /* MockApiClient.swift */; };
+		D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* citydrive.json */; };
 		D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDecoder.swift; sourceTree = "<group>"; };
+		D70AC62E2A15E3650010993C /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		D70AC6302A15E5990010993C /* CarError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarError.swift; sourceTree = "<group>"; };
+		D70AC6322A1605520010993C /* CarsDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDecoderTests.swift; sourceTree = "<group>"; };
+		D70AC6342A160AB40010993C /* NetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
 		D75EB84928EE614900779690 /* CarSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75EB84C28EE614900779690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75EB84E28EE614900779690 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +61,7 @@
 		D75EB85828EE614E00779690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D75EB85A28EE614E00779690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D75EB85F28EE614E00779690 /* CarSharingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSharingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D75EB87C28EE65F800779690 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		D75EB87E28EE676000779690 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
+		D75EB87C28EE65F800779690 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		D75EB88128EE692A00779690 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		D75EB88528EE90DD00779690 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D768742929022A19000A0084 /* CarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotation.swift; sourceTree = "<group>"; };
@@ -70,22 +70,14 @@
 		D785B1A828EFB501004C1441 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCarsharing.swift; sourceTree = "<group>"; };
 		D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsharingProvider.swift; sourceTree = "<group>"; };
-		D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientProtocol.swift; sourceTree = "<group>"; };
 		D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveFeed.swift; sourceTree = "<group>"; };
-		D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCarsharingTests.swift; sourceTree = "<group>"; };
-		D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stable.carsharing.yandex.net-list.json"; sourceTree = "<group>"; };
+		D785B1B428F00180004C1441 /* yandexdrive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yandexdrive.json; sourceTree = "<group>"; };
 		D785B1B628F00759004C1441 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		D785B1B828F00BAC004C1441 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		D7B5ED8628FCE6D800F2800C /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
-		D7B5ED8828FCEA5E00F2800C /* stable.carsharing.yandex.net-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stable.carsharing.yandex.net-list.json"; sourceTree = "<group>"; };
-		D7B5ED8928FCEA5E00F2800C /* api.citydrive.ru-status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api.citydrive.ru-status.json"; sourceTree = "<group>"; };
+		D785B1B828F00BAC004C1441 /* ProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCar.swift; sourceTree = "<group>"; };
 		D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveFeed.swift; sourceTree = "<group>"; };
 		D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCarsharing.swift; sourceTree = "<group>"; };
-		D7CB91E428F3A8B300D0E946 /* CityDriveCarsharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCarsharingTests.swift; sourceTree = "<group>"; };
-		D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api.citydrive.ru-status.json"; sourceTree = "<group>"; };
-		D7CB91E828F3CA5600D0E946 /* CarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModelTests.swift; sourceTree = "<group>"; };
-		D7CB91EA28F3CACF00D0E946 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		D7CB91E628F3A9EB00D0E946 /* citydrive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citydrive.json; sourceTree = "<group>"; };
 		D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +130,6 @@
 		D75EB84B28EE614900779690 /* CarSharing */ = {
 			isa = PBXGroup;
 			children = (
-				D7B5ED8528FCE6AA00F2800C /* Mock */,
 				D785B1A728EFB405004C1441 /* Protocols */,
 				D75EB88328EE90A300779690 /* API */,
 				D75EB88428EE90C100779690 /* Model */,
@@ -156,10 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				D75EB88028EE690700779690 /* Mocks */,
-				D75EB87E28EE676000779690 /* ApiClientTests.swift */,
-				D785B1B228EFD2B2004C1441 /* YandexDriveCarsharingTests.swift */,
-				D7CB91E428F3A8B300D0E946 /* CityDriveCarsharingTests.swift */,
-				D7CB91E828F3CA5600D0E946 /* CarsViewModelTests.swift */,
+				D70AC6322A1605520010993C /* CarsDecoderTests.swift */,
+				D70AC6342A160AB40010993C /* NetworkProviderTests.swift */,
 			);
 			path = CarSharingTests;
 			sourceTree = "<group>";
@@ -167,10 +156,9 @@
 		D75EB88028EE690700779690 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				D7CB91E628F3A9EB00D0E946 /* api.citydrive.ru-status.json */,
-				D785B1B428F00180004C1441 /* stable.carsharing.yandex.net-list.json */,
+				D7CB91E628F3A9EB00D0E946 /* citydrive.json */,
+				D785B1B428F00180004C1441 /* yandexdrive.json */,
 				D75EB88128EE692A00779690 /* MockURLProtocol.swift */,
-				D7CB91EA28F3CACF00D0E946 /* MockApiClient.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -178,7 +166,7 @@
 		D75EB88328EE90A300779690 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D75EB87C28EE65F800779690 /* ApiClient.swift */,
+				D75EB87C28EE65F800779690 /* NetworkProvider.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -190,8 +178,10 @@
 				D7CB91DD28F3A0F600D0E946 /* CityDrive */,
 				D75EB88528EE90DD00779690 /* NetworkError.swift */,
 				D785B1B628F00759004C1441 /* Location.swift */,
-				D785B1B828F00BAC004C1441 /* Provider.swift */,
+				D785B1B828F00BAC004C1441 /* ProviderType.swift */,
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
+				D70AC6302A15E5990010993C /* CarError.swift */,
+				D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,19 +207,9 @@
 			children = (
 				D785B1A828EFB501004C1441 /* Car.swift */,
 				D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */,
-				D785B1AE28EFB622004C1441 /* ApiClientProtocol.swift */,
+				D70AC62E2A15E3650010993C /* Feed.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		D7B5ED8528FCE6AA00F2800C /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				D7B5ED8928FCEA5E00F2800C /* api.citydrive.ru-status.json */,
-				D7B5ED8828FCEA5E00F2800C /* stable.carsharing.yandex.net-list.json */,
-				D7B5ED8628FCE6D800F2800C /* MockApiClient.swift */,
-			);
-			path = Mock;
 			sourceTree = "<group>";
 		};
 		D7C5AB752907A9BC00CC60C0 /* View */ = {
@@ -270,6 +250,7 @@
 				D75EB84528EE614900779690 /* Sources */,
 				D75EB84628EE614900779690 /* Frameworks */,
 				D75EB84728EE614900779690 /* Resources */,
+				D70AC62B2A15BE840010993C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -342,8 +323,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75EB85928EE614E00779690 /* LaunchScreen.storyboard in Resources */,
-				D7B5ED8B28FCEA5E00F2800C /* api.citydrive.ru-status.json in Resources */,
-				D7B5ED8A28FCEA5E00F2800C /* stable.carsharing.yandex.net-list.json in Resources */,
 				D75EB85628EE614E00779690 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,12 +331,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D785B1B528F00180004C1441 /* stable.carsharing.yandex.net-list.json in Resources */,
-				D7CB91E728F3A9EB00D0E946 /* api.citydrive.ru-status.json in Resources */,
+				D785B1B528F00180004C1441 /* yandexdrive.json in Resources */,
+				D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D70AC62B2A15BE840010993C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"error: SwiftLint does not exist!\"\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D75EB84528EE614900779690 /* Sources */ = {
@@ -366,20 +365,21 @@
 			files = (
 				D75EB85128EE614900779690 /* MapViewController.swift in Sources */,
 				D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */,
-				D785B1B928F00BAC004C1441 /* Provider.swift in Sources */,
+				D785B1B928F00BAC004C1441 /* ProviderType.swift in Sources */,
+				D70AC62D2A15DF4D0010993C /* CarsDecoder.swift in Sources */,
 				D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */,
 				D785B1A928EFB501004C1441 /* Car.swift in Sources */,
 				D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */,
 				D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */,
 				D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */,
 				D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */,
-				D785B1AF28EFB622004C1441 /* ApiClientProtocol.swift in Sources */,
-				D7B5ED8728FCE6D900F2800C /* MockApiClient.swift in Sources */,
+				D70AC62F2A15E3650010993C /* Feed.swift in Sources */,
+				D70AC6312A15E5990010993C /* CarError.swift in Sources */,
 				D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */,
 				D785B1B728F00759004C1441 /* Location.swift in Sources */,
 				D768742A29022A19000A0084 /* CarAnnotation.swift in Sources */,
 				D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */,
-				D75EB87D28EE65F800779690 /* ApiClient.swift in Sources */,
+				D75EB87D28EE65F800779690 /* NetworkProvider.swift in Sources */,
 				D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */,
 				D785B1AB28EFB552004C1441 /* YandexDriveCarsharing.swift in Sources */,
 				D75EB88628EE90DD00779690 /* NetworkError.swift in Sources */,
@@ -392,11 +392,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */,
-				D7CB91E528F3A8B300D0E946 /* CityDriveCarsharingTests.swift in Sources */,
-				D7CB91E928F3CA5600D0E946 /* CarsViewModelTests.swift in Sources */,
-				D7CB91EB28F3CACF00D0E946 /* MockApiClient.swift in Sources */,
-				D75EB87F28EE676000779690 /* ApiClientTests.swift in Sources */,
-				D785B1B328EFD2B2004C1441 /* YandexDriveCarsharingTests.swift in Sources */,
+				D70AC6352A160AB40010993C /* NetworkProviderTests.swift in Sources */,
+				D70AC6332A1605520010993C /* CarsDecoderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
