@@ -16,8 +16,9 @@ final class CarsDecoderTests: XCTestCase {
                                  withExtension: "json")!
         let jsonData = try Data(contentsOf: jsonURL)
 
-        let cityDriveDecoder = CarsDecoder(providerType: .cityDrive)
-        let cars = try cityDriveDecoder.decode(from: jsonData)
+//        let cityDriveDecoder = CarsDecoder(providerType: .cityDrive)
+        let cityDriveDecoder = CarsDecoder()
+        let cars = try cityDriveDecoder.decode(from: jsonData, for: .cityDrive)
 
         XCTAssertEqual(cars.count, 3532)
         XCTAssertEqual(cars[3].providerType, .cityDrive)
@@ -35,8 +36,9 @@ final class CarsDecoderTests: XCTestCase {
                                  withExtension: "json")!
         let jsonData = try Data(contentsOf: jsonURL)
 
-        let yandexDriveDecoder = CarsDecoder(providerType: .yandexDrive)
-        let cars = try yandexDriveDecoder.decode(from: jsonData)
+//        let yandexDriveDecoder = CarsDecoder(providerType: .yandexDrive)
+        let yandexDriveDecoder = CarsDecoder()
+        let cars = try yandexDriveDecoder.decode(from: jsonData, for: .yandexDrive)
 
         XCTAssertEqual(cars.count, 4000)
         XCTAssertEqual(cars[3999].number, "т271км797")
@@ -60,8 +62,9 @@ final class CarsDecoderTests: XCTestCase {
         + "\"telematics\":{\"fuel_level\":43,\"fuel_distance\":283}}]}"
         let testJsonData = Data(jsonText.utf8)
 
-        let yandexDriveDecoder = CarsDecoder(providerType: .yandexDrive)
-        let cars = try yandexDriveDecoder.decode(from: testJsonData)
+//        let yandexDriveDecoder = CarsDecoder(providerType: .yandexDrive)
+        let yandexDriveDecoder = CarsDecoder()
+        let cars = try yandexDriveDecoder.decode(from: testJsonData, for: .yandexDrive)
 
         XCTAssertEqual(cars.count, 2)
         XCTAssertEqual(cars[0].number, "у385км799")

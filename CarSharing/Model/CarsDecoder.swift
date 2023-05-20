@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct CarsDecoder {
-    let providerType: ProviderType
+struct CarsDecoder: CarsDecoderProtocol {
 
-    func decode(from data: Data) throws -> [Car] {
+    func decode(from data: Data, for providerType: ProviderType) throws -> [Car] {
         do {
             // Decode the JSON data and get cars.
             let jsonDecoder = JSONDecoder()
@@ -27,37 +26,5 @@ struct CarsDecoder {
             throw CarError.wrongDataFormat(error: error)
         }
     }
-}
-/*
-protocol CarsDecoder {
-    func decode(from data: Data) throws -> [Car]
-}
 
-struct CityDriveDecoder: CarsDecoder {
-    func decode(from data: Data) throws -> [Car] {
-        do {
-            // Decode the JSON data and get cars.
-            let jsonDecoder = JSONDecoder()
-            jsonDecoder.dateDecodingStrategy = .secondsSince1970
-            let carsharingFeed = try jsonDecoder.decode(CityDriveFeed.self, from: data)
-            return carsharingFeed.cars
-        } catch {
-            throw CarError.wrongDataFormat(error: error)
-        }
-    }
 }
-
-struct YandexDriveDecoder: CarsDecoder {
-    func decode(from data: Data) throws -> [Car] {
-        do {
-            // Decode the JSON data and get cars.
-            let jsonDecoder = JSONDecoder()
-            jsonDecoder.dateDecodingStrategy = .secondsSince1970
-            let carsharingFeed = try jsonDecoder.decode(YandexDriveFeed.self, from: data)
-            return carsharingFeed.cars
-        } catch {
-            throw CarError.wrongDataFormat(error: error)
-        }
-    }
-}
-*/

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkProvider {
+final class NetworkProvider: NetworkProviderProtocol {
     // MARK: - Properties
 
     private let urlSession: URLSession

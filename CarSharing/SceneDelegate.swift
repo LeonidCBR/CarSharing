@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let carsVM = CarsViewModel(carsharingProviders: [.cityDrive, .yandexDrive])
+//        let carsVM = CarsViewModel(with: [.cityDrive, .yandexDrive])
+        let carsVM = CarsViewModel()
         let mapViewController = MapViewController(with: carsVM)
         let mainController = UINavigationController(rootViewController: mapViewController)
         window?.rootViewController = mainController
@@ -23,4 +24,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 }
-

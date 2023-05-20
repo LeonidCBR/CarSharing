@@ -34,7 +34,6 @@ class MapViewController: UIViewController {
     }
 
     private func configureUI() {
-        carsViewModel.delegate = self
         configureMap()
         configureSearchController()
     }
@@ -49,7 +48,7 @@ class MapViewController: UIViewController {
         mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-        // TODO: - Show user's location
+        // TODO: Get and show user's location
 
         let centerCoordinate = CLLocationCoordinate2D(latitude: 55.918953,
                                                           longitude: 37.815211)
@@ -66,15 +65,30 @@ class MapViewController: UIViewController {
     }
 
     private func fetchCars() {
-        carsViewModel.fetchCars()
+        Task {
+            do {
+                // TODO: Get the providers from settings
+                carsViewModel.carsharingProviders = [.cityDrive, .yandexDrive]
+
+                let cars = try await carsViewModel.fetchCars()
+                updateCarAnnotations(for: cars)
+            } catch {
+                carsViewModelLogger.error("Error while fetching cars: \(error.localizedDescription)")
+            }
+        }
     }
 
-    private func updateCarAnnotations(for cars: [Car], with providerType: ProviderType) {
-        carAnnotations.removeAll { return $0.providerType == providerType }
-        let newCarAnnotations = cars.map { CarAnnotation(with: $0) }
-        carAnnotations.append(contentsOf: newCarAnnotations)
+    private func updateCarAnnotations(for cars: [Car]) {
+        carAnnotations = cars.map { CarAnnotation(with: $0) }
         showAppropriateCars()
     }
+
+//    private func updateCarAnnotations(for cars: [Car], with providerType: ProviderType) {
+//        carAnnotations.removeAll { return $0.providerType == providerType }
+//        let newCarAnnotations = cars.map { CarAnnotation(with: $0) }
+//        carAnnotations.append(contentsOf: newCarAnnotations)
+//        showAppropriateCars()
+//    }
 
     private func showAppropriateCars() {
         guard mapView.region.span.longitudeDelta < threshold else {
@@ -94,8 +108,6 @@ class MapViewController: UIViewController {
         }
 
         // TODO: Consider to remove other cars outside the map
-        // ...
-
         // This affects to blink car views
 //        removeAllCarsFromMap()
 
@@ -141,47 +153,6 @@ class MapViewController: UIViewController {
     }
 }
 
-
-// MARK: - CarsViewModelDelegate
-
-extension MapViewController: CarsViewModelDelegate {
-    func didGetCars(_ cars: [Car]) {
-        // TODO: Implement the method
-    }
-
-    func didGetError(_ error: Error) {
-        // TODO: Implement the method
-    }
-
-//    func didGetCars(_ carsharingProvider: CarsharingProvider) {
-//        let carsCount = carsViewModel.numberOfCars(for: carsharingProvider)
-//        print("DEBUG: Get new cars (\(carsCount)) by provider \(carsharingProvider.provider)")
-//        let cars = carsViewModel.getAllCarsFor(carsharingProvider: carsharingProvider)
-//        updateCarAnnotations(for: cars, with: carsharingProvider.provider)
-//    }
-/*
-    func didGetError(_ carsharingProvider: CarsharingProvider, error: Error) {
-        print("DEBUG: ERROR! \(error)")
-        let alertController = UIAlertController(title: "ERROR (\(carsharingProvider.provider))",
-                                                message: error.localizedDescription,
-                                                preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(action)
-
-        /*
-         if it's already presented
-         2022-10-26 10:14:18.076552+1000 CarSharing[2782:1062478] [Presentation]
-         Attempt to present <UIAlertController: 0x101a35a00>
-         on <CarSharing.MapViewController: 0x100f0acc0>
-         (from <CarSharing.MapViewController: 0x100f0acc0>)
-         which is already presenting <UIAlertController: 0x101a06600>.
-         */
-        present(alertController, animated: true)
-    }
-*/
-}
-
-
 // MARK: - MKMapViewDelegate
 
 extension MapViewController: MKMapViewDelegate {
@@ -210,7 +181,6 @@ extension MapViewController: MKMapViewDelegate {
     }
 
 }
-
 
 // MARK: - UISearchBarDelegate
 

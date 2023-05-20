@@ -8,54 +8,49 @@
 import Foundation
 import OSLog
 
-let logger = Logger(subsystem: "CarSharing", category: "CarsViewModel")
-
-protocol CarsViewModelDelegate: AnyObject {
-    func didGetCars(_ cars: [Car])
-    func didGetError(_ error: Error)
-}
+let carsViewModelLogger = Logger(subsystem: "CarSharing", category: "CarsViewModel")
 
 final class CarsViewModel {
-//    private let apiClient: ApiClientProtocol
-//    private let carsharingProviders: [CarsharingProvider]
-    private(set) var cars: [Car] = []
-    let carsharingProviders: [ProviderType]
-    weak var delegate: CarsViewModelDelegate?
+    private let networkProvider: NetworkProviderProtocol
+    private let carsDecoder: CarsDecoderProtocol
+    var carsharingProviders: [ProviderType]
 
-//    var numberOfProviders: Int {
-//        return carsharingProviders.count
-//    }
-
-//    init(carsharingProviders: [CarsharingProvider], apiClient: ApiClientProtocol = ApiClient()) {
-//        self.carsharingProviders = carsharingProviders
-//        self.apiClient = apiClient
-//    }
-    init(carsharingProviders: [ProviderType]) {
+    init(with carsharingProviders: [ProviderType] = [],
+         and networkProvider: NetworkProviderProtocol = NetworkProvider(),
+         and carsDecoder: CarsDecoderProtocol = CarsDecoder()) {
         self.carsharingProviders = carsharingProviders
+        self.networkProvider = networkProvider
+        self.carsDecoder = carsDecoder
     }
 
-//    init(carsharingProviders: [CarsharingProvider]) {
-//        self.carsharingProviders = carsharingProviders
-//    }
-
-//    init() {
-//        carsharingProviders = [YandexDriveCarsharing(), CityDriveCarsharing()]
-//    }
-
-    func fetchCars() {
-//        let map: [ProviderType: CarsDecoder] = [ProviderType.cityDrive: CityDriveDecoder(),
-//                                                ProviderType.yandexDrive: YandexDriveDecoder()]
+    /// Returns all cars for all carsharing providers
+    func fetchCars() async throws -> [Car] {
+        var cars: [Car] = []
         // TODO: Make a concurrent perform
+        // for await...
+
+        // TODO: DO NOT interrupt the loop after getting errors
         for carsharingProvider in carsharingProviders {
             // TODO: Implement the method
-            logger.debug("\(#function) - \(carsharingProvider)")
+            carsViewModelLogger.debug("\(#function) - \(carsharingProvider)")
             // get base URL and add important data (limit, user's location)
             // get parameters
-            // fetch data
-            // parse data
-            // try? map[carsharingProvider]?.decode(from: Data())
-            // append cars
+
+            // TODO: Implement request provider
+            // request = requestProvider.getRequest(for: carsharingProvider)
+            let request = URLRequest(url: URL(string: "https://dummy.com")!)
+
+            /// Fetching data
+            let data = try await networkProvider.downloadData(with: request)
+
+            /// Parsing data
+            let newCars = try carsDecoder.decode(from: data, for: carsharingProvider)
+
+            // TODO: !!!Remember about CONCURRENCY!!! for-wait
+            cars.append(contentsOf: newCars)
+
         }
+        return cars
 
 //        DispatchQueue.concurrentPerform(iterations: carsharingProviders.count) { index in
 //            print("DEBUG: concurrent perfom with id \(index)")
@@ -74,13 +69,5 @@ final class CarsViewModel {
 //            }
 //        } //DispatchQueue.concurrentPerform
     }
-/*
-    func numberOfCars(for carsharingProvider: CarsharingProvider) -> Int {
-        return carsharingProvider.cars.count
-    }
 
-    func getAllCarsFor(carsharingProvider: CarsharingProvider) -> [Car] {
-        return carsharingProvider.cars
-    }
-*/
 }

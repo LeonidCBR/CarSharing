@@ -24,8 +24,6 @@
 		D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A228EFAFB3004C1441 /* CarsViewModel.swift */; };
 		D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */; };
 		D785B1A928EFB501004C1441 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1A828EFB501004C1441 /* Car.swift */; };
-		D785B1AB28EFB552004C1441 /* YandexDriveCarsharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */; };
-		D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */; };
 		D785B1B128EFBE44004C1441 /* YandexDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */; };
 		D785B1B528F00180004C1441 /* yandexdrive.json in Resources */ = {isa = PBXBuildFile; fileRef = D785B1B428F00180004C1441 /* yandexdrive.json */; };
 		D785B1B728F00759004C1441 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D785B1B628F00759004C1441 /* Location.swift */; };
@@ -34,9 +32,13 @@
 		D78E5CE32A16FF3600BB5AC7 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CE22A16FF3600BB5AC7 /* TestingAppDelegate.swift */; };
 		D78E5CE52A16FF6A00BB5AC7 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CE42A16FF6A00BB5AC7 /* TestingSceneDelegate.swift */; };
 		D78E5CE72A16FF9500BB5AC7 /* TestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CE62A16FF9500BB5AC7 /* TestingRootViewController.swift */; };
+		D78E5CE92A172C7300BB5AC7 /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CE82A172C7300BB5AC7 /* NetworkProviderProtocol.swift */; };
+		D78E5CEB2A172E0B00BB5AC7 /* MockNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CEA2A172E0B00BB5AC7 /* MockNetworkProvider.swift */; };
+		D78E5CED2A172F4B00BB5AC7 /* CarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CEC2A172F4B00BB5AC7 /* CarsViewModelTests.swift */; };
+		D78E5CEF2A185BC200BB5AC7 /* CarsDecoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CEE2A185BC100BB5AC7 /* CarsDecoderProtocol.swift */; };
+		D78E5CF12A185BFE00BB5AC7 /* MockCarsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E5CF02A185BFE00BB5AC7 /* MockCarsDecoder.swift */; };
 		D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */; };
 		D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */; };
-		D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */; };
 		D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* citydrive.json */; };
 		D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */; };
 /* End PBXBuildFile section */
@@ -72,8 +74,6 @@
 		D785B1A228EFAFB3004C1441 /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
 		D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCar.swift; sourceTree = "<group>"; };
 		D785B1A828EFB501004C1441 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCarsharing.swift; sourceTree = "<group>"; };
-		D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsharingProvider.swift; sourceTree = "<group>"; };
 		D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveFeed.swift; sourceTree = "<group>"; };
 		D785B1B428F00180004C1441 /* yandexdrive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yandexdrive.json; sourceTree = "<group>"; };
 		D785B1B628F00759004C1441 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -82,9 +82,13 @@
 		D78E5CE22A16FF3600BB5AC7 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		D78E5CE42A16FF6A00BB5AC7 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		D78E5CE62A16FF9500BB5AC7 /* TestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingRootViewController.swift; sourceTree = "<group>"; };
+		D78E5CE82A172C7300BB5AC7 /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
+		D78E5CEA2A172E0B00BB5AC7 /* MockNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkProvider.swift; sourceTree = "<group>"; };
+		D78E5CEC2A172F4B00BB5AC7 /* CarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModelTests.swift; sourceTree = "<group>"; };
+		D78E5CEE2A185BC100BB5AC7 /* CarsDecoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDecoderProtocol.swift; sourceTree = "<group>"; };
+		D78E5CF02A185BFE00BB5AC7 /* MockCarsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCarsDecoder.swift; sourceTree = "<group>"; };
 		D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCar.swift; sourceTree = "<group>"; };
 		D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveFeed.swift; sourceTree = "<group>"; };
-		D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCarsharing.swift; sourceTree = "<group>"; };
 		D7CB91E628F3A9EB00D0E946 /* citydrive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citydrive.json; sourceTree = "<group>"; };
 		D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +162,7 @@
 				D75EB88028EE690700779690 /* Mocks */,
 				D70AC6322A1605520010993C /* CarsDecoderTests.swift */,
 				D70AC6342A160AB40010993C /* NetworkProviderTests.swift */,
+				D78E5CEC2A172F4B00BB5AC7 /* CarsViewModelTests.swift */,
 			);
 			path = CarSharingTests;
 			sourceTree = "<group>";
@@ -171,6 +176,8 @@
 				D78E5CE22A16FF3600BB5AC7 /* TestingAppDelegate.swift */,
 				D78E5CE42A16FF6A00BB5AC7 /* TestingSceneDelegate.swift */,
 				D78E5CE62A16FF9500BB5AC7 /* TestingRootViewController.swift */,
+				D78E5CEA2A172E0B00BB5AC7 /* MockNetworkProvider.swift */,
+				D78E5CF02A185BFE00BB5AC7 /* MockCarsDecoder.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -188,11 +195,10 @@
 			children = (
 				D7CB91DC28F3A0E600D0E946 /* YandexDrive */,
 				D7CB91DD28F3A0F600D0E946 /* CityDrive */,
-				D75EB88528EE90DD00779690 /* NetworkError.swift */,
+				D78E5CF22A18680D00BB5AC7 /* Errors */,
 				D785B1B628F00759004C1441 /* Location.swift */,
 				D785B1B828F00BAC004C1441 /* ProviderType.swift */,
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
-				D70AC6302A15E5990010993C /* CarError.swift */,
 				D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */,
 			);
 			path = Model;
@@ -218,10 +224,20 @@
 			isa = PBXGroup;
 			children = (
 				D785B1A828EFB501004C1441 /* Car.swift */,
-				D785B1AC28EFB56A004C1441 /* CarsharingProvider.swift */,
 				D70AC62E2A15E3650010993C /* Feed.swift */,
+				D78E5CE82A172C7300BB5AC7 /* NetworkProviderProtocol.swift */,
+				D78E5CEE2A185BC100BB5AC7 /* CarsDecoderProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D78E5CF22A18680D00BB5AC7 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D75EB88528EE90DD00779690 /* NetworkError.swift */,
+				D70AC6302A15E5990010993C /* CarError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		D7C5AB752907A9BC00CC60C0 /* View */ = {
@@ -237,7 +253,6 @@
 			children = (
 				D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */,
 				D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */,
-				D785B1AA28EFB552004C1441 /* YandexDriveCarsharing.swift */,
 			);
 			path = YandexDrive;
 			sourceTree = "<group>";
@@ -247,7 +262,6 @@
 			children = (
 				D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */,
 				D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */,
-				D7CB91E228F3A72100D0E946 /* CityDriveCarsharing.swift */,
 			);
 			path = CityDrive;
 			sourceTree = "<group>";
@@ -379,12 +393,12 @@
 				D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */,
 				D785B1B928F00BAC004C1441 /* ProviderType.swift in Sources */,
 				D70AC62D2A15DF4D0010993C /* CarsDecoder.swift in Sources */,
-				D785B1AD28EFB56A004C1441 /* CarsharingProvider.swift in Sources */,
+				D78E5CEF2A185BC200BB5AC7 /* CarsDecoderProtocol.swift in Sources */,
 				D785B1A928EFB501004C1441 /* Car.swift in Sources */,
 				D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */,
 				D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */,
 				D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */,
-				D7CB91E328F3A72100D0E946 /* CityDriveCarsharing.swift in Sources */,
+				D78E5CE92A172C7300BB5AC7 /* NetworkProviderProtocol.swift in Sources */,
 				D70AC62F2A15E3650010993C /* Feed.swift in Sources */,
 				D70AC6312A15E5990010993C /* CarError.swift in Sources */,
 				D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */,
@@ -394,7 +408,6 @@
 				D75EB87D28EE65F800779690 /* NetworkProvider.swift in Sources */,
 				D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */,
 				D78E5CE12A16FBD300BB5AC7 /* main.swift in Sources */,
-				D785B1AB28EFB552004C1441 /* YandexDriveCarsharing.swift in Sources */,
 				D75EB88628EE90DD00779690 /* NetworkError.swift in Sources */,
 				D785B1B128EFBE44004C1441 /* YandexDriveFeed.swift in Sources */,
 			);
@@ -407,7 +420,10 @@
 				D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */,
 				D78E5CE32A16FF3600BB5AC7 /* TestingAppDelegate.swift in Sources */,
 				D78E5CE52A16FF6A00BB5AC7 /* TestingSceneDelegate.swift in Sources */,
+				D78E5CED2A172F4B00BB5AC7 /* CarsViewModelTests.swift in Sources */,
 				D70AC6352A160AB40010993C /* NetworkProviderTests.swift in Sources */,
+				D78E5CF12A185BFE00BB5AC7 /* MockCarsDecoder.swift in Sources */,
+				D78E5CEB2A172E0B00BB5AC7 /* MockNetworkProvider.swift in Sources */,
 				D70AC6332A1605520010993C /* CarsDecoderTests.swift in Sources */,
 				D78E5CE72A16FF9500BB5AC7 /* TestingRootViewController.swift in Sources */,
 			);
