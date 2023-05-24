@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol Credentials {
+    var apiURL: URL? { get }
+}
