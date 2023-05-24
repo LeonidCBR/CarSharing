@@ -24,13 +24,22 @@ final class CarsViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
         mockNetworkProvider = nil
-        // TODO: Find out a proper way to use it, because CarsDecoder is a struct
         mockCarsDecoder = nil
     }
 
     func testCarsViewModel_WhenFetchingCarsSuccessful_ReturnsCars() async throws {
-        let car1 = CityDriveCar(lat: 56.024808, lon: 37.488716, distance: 9060244, fuel: 57, model: "Nissan Qashqai", number: "р950вк797")
-        let car2 = CityDriveCar(lat: 56.1122, lon: 37.4433, distance: 9060245, fuel: 47, model: "Nissan Qashqai", number: "р999рр797")
+        let car1 = CityDriveCar(lat: 56.024808,
+                                lon: 37.488716,
+                                distance: 9060244,
+                                fuel: 57,
+                                model: "Nissan Qashqai",
+                                number: "р950вк797")
+        let car2 = CityDriveCar(lat: 56.1122,
+                                lon: 37.4433,
+                                distance: 9060245,
+                                fuel: 47,
+                                model: "Nissan Qashqai",
+                                number: "р999рр797")
         let shouldReturnCars = [car1, car2]
 
         mockNetworkProvider.shouldReturnData = Data("TEST".utf8)

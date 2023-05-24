@@ -10,9 +10,31 @@ import Foundation
 
 final class MockCredentialsProvider: CredentialsProviderProtocol {
     func getCredentials(for providerType: CarSharing.ProviderType) -> CarSharing.Credentials {
-        // TODO: Read data from plist
-        let yaHost = "dummy-host"
-
+//        let resource: String
+//        switch providerType {
+//        case .yandexDrive:
+//            resource = "YandexCredentials"
+//        case .cityDrive:
+//            resource = "CityCredentials"
+//        }
+//        guard let path = Bundle.main.path(forResource: "YandexCredentials",
+//                                          ofType: "plist") else {
+//            fatalError("Cannot get path to a file with credentials!")
+//        }
+        let bundle = Bundle(for: MockCredentialsProvider.self)
+//        let url = URL(fileURLWithPath: path)
+        let url = bundle.url(forResource: "YandexCredentials", withExtension: "plist")!
+        guard let data = try? Data(contentsOf: url) else {
+            fatalError("Cannot get data!")
+        }
+        guard let plist = try? PropertyListSerialization.propertyList(from: data,
+                                                                      format: nil)
+                as? [String: String] else {
+            fatalError("Cannot serialize data!")
+        }
+        guard let yaHost = plist["host"] else {
+            fatalError("Cannot get host from plist!")
+        }
         let yandexDriveCredentials = YandexDriveCredentials(host: yaHost)
         return yandexDriveCredentials
     }

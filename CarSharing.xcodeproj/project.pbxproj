@@ -17,7 +17,6 @@
 		D75B710C2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */; };
 		D75B710E2A1DBCF5002400B9 /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */; };
 		D75B71102A1DBE2A002400B9 /* MockCredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710F2A1DBE2A002400B9 /* MockCredentialsProvider.swift */; };
-		D75B71122A1DBF88002400B9 /* YandexCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = D75B71112A1DBF88002400B9 /* YandexCredentials.plist */; };
 		D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84C28EE614900779690 /* AppDelegate.swift */; };
 		D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84E28EE614900779690 /* SceneDelegate.swift */; };
 		D75EB85128EE614900779690 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB85028EE614900779690 /* MapViewController.swift */; };
@@ -46,6 +45,9 @@
 		D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */; };
 		D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */; };
 		D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* citydrive.json */; };
+		D7D7DFBD2A1DCD5600F3EFDD /* YandexCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7D7DFBC2A1DCD5600F3EFDD /* YandexCredentials.plist */; };
+		D7D7DFBF2A1DD54800F3EFDD /* RequestProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */; };
+		D7D7DFC12A1DD68C00F3EFDD /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */; };
 		D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +72,6 @@
 		D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsProviderProtocol.swift; sourceTree = "<group>"; };
 		D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsProvider.swift; sourceTree = "<group>"; };
 		D75B710F2A1DBE2A002400B9 /* MockCredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCredentialsProvider.swift; sourceTree = "<group>"; };
-		D75B71112A1DBF88002400B9 /* YandexCredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = YandexCredentials.plist; sourceTree = "<group>"; };
 		D75EB84928EE614900779690 /* CarSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75EB84C28EE614900779690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75EB84E28EE614900779690 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveCar.swift; sourceTree = "<group>"; };
 		D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveFeed.swift; sourceTree = "<group>"; };
 		D7CB91E628F3A9EB00D0E946 /* citydrive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citydrive.json; sourceTree = "<group>"; };
+		D7D7DFBC2A1DCD5600F3EFDD /* YandexCredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = YandexCredentials.plist; sourceTree = "<group>"; };
+		D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviderProtocol.swift; sourceTree = "<group>"; };
+		D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				D75EB88028EE690700779690 /* Mocks */,
-				D70AC6322A1605520010993C /* CarsDecoderTests.swift */,
 				D70AC6342A160AB40010993C /* NetworkProviderTests.swift */,
+				D70AC6322A1605520010993C /* CarsDecoderTests.swift */,
 				D78E5CEC2A172F4B00BB5AC7 /* CarsViewModelTests.swift */,
 			);
 			path = CarSharingTests;
@@ -186,12 +190,12 @@
 				D785B1B428F00180004C1441 /* yandexdrive.json */,
 				D75EB88128EE692A00779690 /* MockURLProtocol.swift */,
 				D78E5CE22A16FF3600BB5AC7 /* TestingAppDelegate.swift */,
+				D7D7DFBC2A1DCD5600F3EFDD /* YandexCredentials.plist */,
 				D78E5CE42A16FF6A00BB5AC7 /* TestingSceneDelegate.swift */,
 				D78E5CE62A16FF9500BB5AC7 /* TestingRootViewController.swift */,
 				D78E5CEA2A172E0B00BB5AC7 /* MockNetworkProvider.swift */,
 				D78E5CF02A185BFE00BB5AC7 /* MockCarsDecoder.swift */,
 				D75B710F2A1DBE2A002400B9 /* MockCredentialsProvider.swift */,
-				D75B71112A1DBF88002400B9 /* YandexCredentials.plist */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
 				D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */,
 				D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */,
+				D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				D70AC62E2A15E3650010993C /* Feed.swift */,
 				D78E5CE82A172C7300BB5AC7 /* NetworkProviderProtocol.swift */,
 				D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */,
+				D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */,
 				D78E5CEE2A185BC100BB5AC7 /* CarsDecoderProtocol.swift */,
 				D75B71052A1DB432002400B9 /* Credentials.swift */,
 			);
@@ -375,7 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75B71122A1DBF88002400B9 /* YandexCredentials.plist in Resources */,
+				D7D7DFBD2A1DCD5600F3EFDD /* YandexCredentials.plist in Resources */,
 				D785B1B528F00180004C1441 /* yandexdrive.json in Resources */,
 				D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */,
 			);
@@ -408,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D7DFBF2A1DD54800F3EFDD /* RequestProviderProtocol.swift in Sources */,
 				D75EB85128EE614900779690 /* MapViewController.swift in Sources */,
 				D785B1A328EFAFB3004C1441 /* CarsViewModel.swift in Sources */,
 				D785B1B928F00BAC004C1441 /* ProviderType.swift in Sources */,
@@ -422,6 +429,7 @@
 				D70AC6312A15E5990010993C /* CarError.swift in Sources */,
 				D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */,
 				D75B710E2A1DBCF5002400B9 /* CredentialsProvider.swift in Sources */,
+				D7D7DFC12A1DD68C00F3EFDD /* RequestProvider.swift in Sources */,
 				D785B1B728F00759004C1441 /* Location.swift in Sources */,
 				D75B71062A1DB432002400B9 /* Credentials.swift in Sources */,
 				D768742A29022A19000A0084 /* CarAnnotation.swift in Sources */,

@@ -13,14 +13,20 @@ let carsViewModelLogger = Logger(subsystem: "CarSharing", category: "CarsViewMod
 final class CarsViewModel {
     private let networkProvider: NetworkProviderProtocol
     private let carsDecoder: CarsDecoderProtocol
+    private let credentialsProvider: CredentialsProviderProtocol
+    private let requestProvider: RequestProviderProtocol
     var carsharingProviders: [ProviderType]
 
     init(with carsharingProviders: [ProviderType] = [],
          and networkProvider: NetworkProviderProtocol = NetworkProvider(),
-         and carsDecoder: CarsDecoderProtocol = CarsDecoder()) {
+         and carsDecoder: CarsDecoderProtocol = CarsDecoder(),
+         and credentialsProvider: CredentialsProviderProtocol = CredentialsProvider(),
+         and requestProvider: RequestProviderProtocol = RequestProvider()) {
         self.carsharingProviders = carsharingProviders
         self.networkProvider = networkProvider
         self.carsDecoder = carsDecoder
+        self.credentialsProvider = credentialsProvider
+        self.requestProvider = requestProvider
     }
 
     /// Returns all cars for all carsharing providers
@@ -28,27 +34,19 @@ final class CarsViewModel {
         var cars: [Car] = []
         // TODO: Make a concurrent perform
         // for await...
-
         // TODO: DO NOT interrupt the loop after getting errors
         for carsharingProvider in carsharingProviders {
-            // TODO: Implement the method
             carsViewModelLogger.debug("\(#function) - \(carsharingProvider)")
-            // get base URL and add important data (limit, user's location)
-            // get parameters
-
-            // TODO: Implement request provider
-            // request = requestProvider.getRequest(for: carsharingProvider)
-            let request = URLRequest(url: URL(string: "https://dummy.com")!)
-
+            // TODO: Consider to use it
+            let credentials = credentialsProvider.getCredentials(for: carsharingProvider)
+            /// Prepare request
+            let request = requestProvider.createRequest(for: carsharingProvider, with: credentials)
             /// Fetching data
             let data = try await networkProvider.downloadData(with: request)
-
             /// Parsing data
             let newCars = try carsDecoder.decode(from: data, for: carsharingProvider)
-
             // TODO: !!!Remember about CONCURRENCY!!! for-wait
             cars.append(contentsOf: newCars)
-
         }
         return cars
 
