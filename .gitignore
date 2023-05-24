@@ -5,7 +5,7 @@
 # Mock JSON files
 CarSharingTests/Mocks/citydrive.json
 CarSharingTests/Mocks/yandexdrive.json
-CarSharingTests/Mocks/YandexCredentials.plist
+YandexCredentials.plist
 
 ## User settings
 xcuserdata/
