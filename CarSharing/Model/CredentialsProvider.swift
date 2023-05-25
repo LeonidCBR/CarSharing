@@ -12,7 +12,7 @@ struct CredentialsProvider: CredentialsProviderProtocol {
     func getCredentials(for providerType: ProviderType) -> Credentials {
         // TODO: Get credentials from UserDefaults
         // TODO: Refactor and return Credentials(urlString...)
-        return YandexDriveCredentials(urlString: "dummy-host", parameters: [:], headers: [:])
+        return Credentials(urlString: "dummy-host", parameters: [:], headers: [:])
     }
 
     func saveCredentials(_ credentials: Credentials) {

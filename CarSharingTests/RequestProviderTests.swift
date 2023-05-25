@@ -23,9 +23,9 @@ final class RequestProviderTests: XCTestCase {
         let url = "https://my.site.com/api"
         let params = ["first": "111", "second": "222"]
         let headers = ["some": "data", "another": "raw"]
-        let credentials = YandexDriveCredentials(urlString: url,
-                                                 parameters: params,
-                                                 headers: headers)
+        let credentials = Credentials(urlString: url,
+                                      parameters: params,
+                                      headers: headers)
         let request = try sut.createRequest(with: credentials)
         guard let host = request.url?.host else {
             XCTFail("Cannot get host")

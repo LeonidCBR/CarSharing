@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct YandexDriveCredentials: Credentials {
+struct Credentials {
     var urlString: String
     let parameters: [String: String]
     let headers: [String: String]

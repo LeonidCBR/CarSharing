@@ -9,6 +9,7 @@ import Foundation
 
 struct RequestProvider: RequestProviderProtocol {
     func createRequest(with credentials: Credentials) throws -> URLRequest {
+        // Adding parameters to request
         let params = credentials.parameters
         var endpointURLString = credentials.urlString + "?"
         for key in params.keys {

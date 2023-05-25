@@ -10,17 +10,6 @@ import Foundation
 
 final class MockCredentialsProvider: CredentialsProviderProtocol {
     func getCredentials(for providerType: CarSharing.ProviderType) -> CarSharing.Credentials {
-//        let resource: String
-//        switch providerType {
-//        case .yandexDrive:
-//            resource = "YandexCredentials"
-//        case .cityDrive:
-//            resource = "CityCredentials"
-//        }
-//        guard let path = Bundle.main.path(forResource: "YandexCredentials",
-//                                          ofType: "plist") else {
-//            fatalError("Cannot get path to a file with credentials!")
-//        }
         let bundle = Bundle(for: MockCredentialsProvider.self)
         let url = bundle.url(forResource: "YandexCredentials", withExtension: "plist")!
         guard let data = try? Data(contentsOf: url) else {
@@ -40,7 +29,7 @@ final class MockCredentialsProvider: CredentialsProviderProtocol {
         guard let headers = plist["headers"] as? [String: String] else {
             fatalError("Cannot get headers from plist file!")
         }
-        let yandexDriveCredentials = YandexDriveCredentials(urlString: yaHost,
+        let yandexDriveCredentials = Credentials(urlString: yaHost,
                                                             parameters: params,
                                                             headers: headers)
         print("DEBUG: Provide Yandex credentials ===>>>\n\(yandexDriveCredentials)")

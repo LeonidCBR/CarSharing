@@ -12,8 +12,7 @@
 		D70AC6312A15E5990010993C /* CarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC6302A15E5990010993C /* CarError.swift */; };
 		D70AC6332A1605520010993C /* CarsDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC6322A1605520010993C /* CarsDecoderTests.swift */; };
 		D70AC6352A160AB40010993C /* NetworkProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AC6342A160AB40010993C /* NetworkProviderTests.swift */; };
-		D75B71062A1DB432002400B9 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B71052A1DB432002400B9 /* Credentials.swift */; };
-		D75B71082A1DB620002400B9 /* YandexDriveCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B71072A1DB620002400B9 /* YandexDriveCredentials.swift */; };
+		D75B71082A1DB620002400B9 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B71072A1DB620002400B9 /* Credentials.swift */; };
 		D75B710C2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */; };
 		D75B710E2A1DBCF5002400B9 /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */; };
 		D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84C28EE614900779690 /* AppDelegate.swift */; };
@@ -79,8 +78,7 @@
 		D70AC6302A15E5990010993C /* CarError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarError.swift; sourceTree = "<group>"; };
 		D70AC6322A1605520010993C /* CarsDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDecoderTests.swift; sourceTree = "<group>"; };
 		D70AC6342A160AB40010993C /* NetworkProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTests.swift; sourceTree = "<group>"; };
-		D75B71052A1DB432002400B9 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		D75B71072A1DB620002400B9 /* YandexDriveCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCredentials.swift; sourceTree = "<group>"; };
+		D75B71072A1DB620002400B9 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsProviderProtocol.swift; sourceTree = "<group>"; };
 		D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsProvider.swift; sourceTree = "<group>"; };
 		D75EB84928EE614900779690 /* CarSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +240,7 @@
 				D78E5CF22A18680D00BB5AC7 /* Errors */,
 				D785B1B628F00759004C1441 /* Location.swift */,
 				D785B1B828F00BAC004C1441 /* ProviderType.swift */,
+				D75B71072A1DB620002400B9 /* Credentials.swift */,
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
 				D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */,
 				D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */,
@@ -275,7 +274,6 @@
 				D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */,
 				D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */,
 				D78E5CEE2A185BC100BB5AC7 /* CarsDecoderProtocol.swift */,
-				D75B71052A1DB432002400B9 /* Credentials.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -302,7 +300,6 @@
 			children = (
 				D785B1A528EFB3F9004C1441 /* YandexDriveCar.swift */,
 				D785B1B028EFBE44004C1441 /* YandexDriveFeed.swift */,
-				D75B71072A1DB620002400B9 /* YandexDriveCredentials.swift */,
 			);
 			path = YandexDrive;
 			sourceTree = "<group>";
@@ -508,11 +505,10 @@
 				D75B710E2A1DBCF5002400B9 /* CredentialsProvider.swift in Sources */,
 				D7D7DFC12A1DD68C00F3EFDD /* RequestProvider.swift in Sources */,
 				D785B1B728F00759004C1441 /* Location.swift in Sources */,
-				D75B71062A1DB432002400B9 /* Credentials.swift in Sources */,
 				D768742A29022A19000A0084 /* CarAnnotation.swift in Sources */,
 				D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */,
 				D75EB87D28EE65F800779690 /* NetworkProvider.swift in Sources */,
-				D75B71082A1DB620002400B9 /* YandexDriveCredentials.swift in Sources */,
+				D75B71082A1DB620002400B9 /* Credentials.swift in Sources */,
 				D785B1A628EFB3F9004C1441 /* YandexDriveCar.swift in Sources */,
 				D78E5CE12A16FBD300BB5AC7 /* main.swift in Sources */,
 				D75B710C2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift in Sources */,
