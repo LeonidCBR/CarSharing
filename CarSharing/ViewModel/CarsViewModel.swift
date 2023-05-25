@@ -41,7 +41,7 @@ final class CarsViewModel {
             // TODO: Consider to use it
             let credentials = credentialsProvider.getCredentials(for: carsharingProvider)
             /// Prepare request
-            let request = requestProvider.createRequest(for: carsharingProvider, with: credentials)
+            let request = try requestProvider.createRequest(for: carsharingProvider, with: credentials)
             /// Fetching data
             let data = try await networkProvider.downloadData(with: request)
             /// Parsing data

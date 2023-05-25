@@ -8,9 +8,7 @@
 import Foundation
 
 struct YandexDriveCredentials: Credentials {
-    let host: String
-
-    var apiURL: URL? {
-        return URL(string: "https://\(host)")
-    }
+    var urlString: String
+    let parameters: [String: String]
+    let headers: [String: String]
 }

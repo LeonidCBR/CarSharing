@@ -28,13 +28,21 @@ final class MockCredentialsProvider: CredentialsProviderProtocol {
         }
         guard let plist = try? PropertyListSerialization.propertyList(from: data,
                                                                       format: nil)
-                as? [String: String] else {
+                as? [String: AnyObject] else {
             fatalError("Cannot serialize data!")
         }
-        guard let yaHost = plist["host"] else {
-            fatalError("Cannot get host from plist!")
+        guard let yaHost = plist["url"] as? String else {
+            fatalError("Cannot get host from plist file!")
         }
-        let yandexDriveCredentials = YandexDriveCredentials(host: yaHost)
+        guard let params = plist["params"] as? [String: String] else {
+            fatalError("Cannot get parameters from plist file!")
+        }
+        guard let headers = plist["headers"] as? [String: String] else {
+            fatalError("Cannot get headers from plist file!")
+        }
+        let yandexDriveCredentials = YandexDriveCredentials(urlString: yaHost,
+                                                            parameters: params,
+                                                            headers: headers)
         print("DEBUG: Provide Yandex credentials ===>>>\n\(yandexDriveCredentials)")
         return yandexDriveCredentials
     }

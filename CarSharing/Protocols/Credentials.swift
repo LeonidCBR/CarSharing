@@ -8,5 +8,7 @@
 import Foundation
 
 protocol Credentials {
-    var apiURL: URL? { get }
+    var urlString: String { get }
+    var parameters: [String: String] { get }
+    var headers: [String: String] { get }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RequestProviderProtocol {
-    func createRequest(for providerType: ProviderType, with credentials: Credentials) -> URLRequest
+    func createRequest(for providerType: ProviderType, with credentials: Credentials) throws -> URLRequest
 }
