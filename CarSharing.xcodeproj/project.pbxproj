@@ -45,7 +45,6 @@
 		D7CB91DF28F3A12700D0E946 /* CityDriveCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91DE28F3A12700D0E946 /* CityDriveCar.swift */; };
 		D7CB91E128F3A59700D0E946 /* CityDriveFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */; };
 		D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CB91E628F3A9EB00D0E946 /* citydrive.json */; };
-		D7D20E182A1F25660097E6AF /* CarSharingIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E172A1F25660097E6AF /* CarSharingIntegrationTests.swift */; };
 		D7D20E202A1F26310097E6AF /* CarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E1F2A1F26310097E6AF /* CarsViewModelTests.swift */; };
 		D7D20E222A1F27D90097E6AF /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E212A1F27D90097E6AF /* TestingAppDelegate.swift */; };
 		D7D20E242A1F28070097E6AF /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E232A1F28070097E6AF /* TestingSceneDelegate.swift */; };
@@ -116,7 +115,6 @@
 		D7CB91E028F3A59700D0E946 /* CityDriveFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDriveFeed.swift; sourceTree = "<group>"; };
 		D7CB91E628F3A9EB00D0E946 /* citydrive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citydrive.json; sourceTree = "<group>"; };
 		D7D20E152A1F25660097E6AF /* CarSharingIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSharingIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7D20E172A1F25660097E6AF /* CarSharingIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSharingIntegrationTests.swift; sourceTree = "<group>"; };
 		D7D20E1F2A1F26310097E6AF /* CarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModelTests.swift; sourceTree = "<group>"; };
 		D7D20E212A1F27D90097E6AF /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		D7D20E232A1F28070097E6AF /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				D7D20E1E2A1F25960097E6AF /* Mocks */,
-				D7D20E172A1F25660097E6AF /* CarSharingIntegrationTests.swift */,
 				D7D20E1F2A1F26310097E6AF /* CarsViewModelTests.swift */,
 			);
 			path = CarSharingIntegrationTests;
@@ -544,7 +541,6 @@
 			files = (
 				D7D20E242A1F28070097E6AF /* TestingSceneDelegate.swift in Sources */,
 				D7D20E222A1F27D90097E6AF /* TestingAppDelegate.swift in Sources */,
-				D7D20E182A1F25660097E6AF /* CarSharingIntegrationTests.swift in Sources */,
 				D7D20E262A1F28380097E6AF /* TestingRootViewController.swift in Sources */,
 				D7D20E202A1F26310097E6AF /* CarsViewModelTests.swift in Sources */,
 			);
