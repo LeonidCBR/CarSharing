@@ -37,14 +37,6 @@
                BlueprintName = "CarSharingTests"
                ReferencedContainer = "container:CarSharing.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "CarSharingTests">
-               </Test>
-               <Test
-                  Identifier = "CarSharingTests/testExample()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO"
