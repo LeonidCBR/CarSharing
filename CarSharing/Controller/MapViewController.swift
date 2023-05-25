@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 
+@MainActor
 class MapViewController: UIViewController {
 
     private var mapView: MKMapView!
@@ -65,13 +66,13 @@ class MapViewController: UIViewController {
     }
 
     private func fetchCars() {
-        Task {
+        Task { [weak self] in
             do {
+                guard let self else { return }
                 // TODO: Get the providers from settings
-                carsViewModel.carsharingProviders = [.cityDrive, .yandexDrive]
-
-                let cars = try await carsViewModel.fetchCars()
-                updateCarAnnotations(for: cars)
+                self.carsViewModel.carsharingProviders = [.cityDrive, .yandexDrive]
+                let cars = try await self.carsViewModel.fetchCars()
+                self.updateCarAnnotations(for: cars)
             } catch {
                 carsViewModelLogger.error("Error while fetching cars: \(error.localizedDescription)")
             }
