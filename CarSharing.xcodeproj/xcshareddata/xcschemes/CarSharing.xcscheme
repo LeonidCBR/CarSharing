@@ -46,6 +46,17 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D7D20E142A1F25660097E6AF"
+               BuildableName = "CarSharingIntegrationTests.xctest"
+               BlueprintName = "CarSharingIntegrationTests"
+               ReferencedContainer = "container:CarSharing.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
