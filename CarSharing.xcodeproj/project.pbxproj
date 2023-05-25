@@ -50,6 +50,7 @@
 		D7D20E262A1F28380097E6AF /* TestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E252A1F28380097E6AF /* TestingRootViewController.swift */; };
 		D7D20E2A2A1F2DDE0097E6AF /* MockCredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E292A1F2DDE0097E6AF /* MockCredentialsProvider.swift */; };
 		D7D20E2C2A1F30840097E6AF /* YandexCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7D20E2B2A1F30840097E6AF /* YandexCredentials.plist */; };
+		D7D20E2E2A1F42E70097E6AF /* RequestProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E2D2A1F42E70097E6AF /* RequestProviderTests.swift */; };
 		D7D7DFBF2A1DD54800F3EFDD /* RequestProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */; };
 		D7D7DFC12A1DD68C00F3EFDD /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */; };
 		D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */; };
@@ -120,6 +121,7 @@
 		D7D20E252A1F28380097E6AF /* TestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingRootViewController.swift; sourceTree = "<group>"; };
 		D7D20E292A1F2DDE0097E6AF /* MockCredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCredentialsProvider.swift; sourceTree = "<group>"; };
 		D7D20E2B2A1F30840097E6AF /* YandexCredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = YandexCredentials.plist; sourceTree = "<group>"; };
+		D7D20E2D2A1F42E70097E6AF /* RequestProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviderTests.swift; sourceTree = "<group>"; };
 		D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviderProtocol.swift; sourceTree = "<group>"; };
 		D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotationView.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				D70AC6342A160AB40010993C /* NetworkProviderTests.swift */,
 				D70AC6322A1605520010993C /* CarsDecoderTests.swift */,
 				D78E5CEC2A172F4B00BB5AC7 /* CarsViewModelTests.swift */,
+				D7D20E2D2A1F42E70097E6AF /* RequestProviderTests.swift */,
 			);
 			path = CarSharingTests;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D20E2E2A1F42E70097E6AF /* RequestProviderTests.swift in Sources */,
 				D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */,
 				D78E5CE32A16FF3600BB5AC7 /* TestingAppDelegate.swift in Sources */,
 				D78E5CE52A16FF6A00BB5AC7 /* TestingSceneDelegate.swift in Sources */,

@@ -8,9 +8,8 @@
 import Foundation
 
 struct RequestProvider: RequestProviderProtocol {
-    func createRequest(for providerType: ProviderType, with credentials: Credentials) throws -> URLRequest {
+    func createRequest(with credentials: Credentials) throws -> URLRequest {
         let params = credentials.parameters
-        let headers = credentials.headers
         var endpointURLString = credentials.urlString + "?"
         for key in params.keys {
             endpointURLString.append("\(key)=\(params[key] ?? "")&")
@@ -21,10 +20,13 @@ struct RequestProvider: RequestProviderProtocol {
         guard let endpointURL = URL(string: endpointURLString) else {
             throw NetworkError.unexpectedURL
         }
-        let request = URLRequest(url: endpointURL)
-
-        // TODO: Add the headers in the request
-
+        var request = URLRequest(url: endpointURL)
+        request.httpMethod = "GET"
+        // Adding headers to request
+        let headers = credentials.headers
+        for key in headers.keys {
+            request.setValue(headers[key], forHTTPHeaderField: key)
+        }
         return request
     }
 
