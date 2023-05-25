@@ -22,7 +22,6 @@ final class MockCredentialsProvider: CredentialsProviderProtocol {
 //            fatalError("Cannot get path to a file with credentials!")
 //        }
         let bundle = Bundle(for: MockCredentialsProvider.self)
-//        let url = URL(fileURLWithPath: path)
         let url = bundle.url(forResource: "YandexCredentials", withExtension: "plist")!
         guard let data = try? Data(contentsOf: url) else {
             fatalError("Cannot get data!")
@@ -36,6 +35,7 @@ final class MockCredentialsProvider: CredentialsProviderProtocol {
             fatalError("Cannot get host from plist!")
         }
         let yandexDriveCredentials = YandexDriveCredentials(host: yaHost)
+        print("DEBUG: Provide Yandex credentials ===>>>\n\(yandexDriveCredentials)")
         return yandexDriveCredentials
     }
 

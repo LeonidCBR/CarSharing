@@ -16,7 +16,6 @@
 		D75B71082A1DB620002400B9 /* YandexDriveCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B71072A1DB620002400B9 /* YandexDriveCredentials.swift */; };
 		D75B710C2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */; };
 		D75B710E2A1DBCF5002400B9 /* CredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */; };
-		D75B71102A1DBE2A002400B9 /* MockCredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B710F2A1DBE2A002400B9 /* MockCredentialsProvider.swift */; };
 		D75EB84D28EE614900779690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84C28EE614900779690 /* AppDelegate.swift */; };
 		D75EB84F28EE614900779690 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB84E28EE614900779690 /* SceneDelegate.swift */; };
 		D75EB85128EE614900779690 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EB85028EE614900779690 /* MapViewController.swift */; };
@@ -49,7 +48,8 @@
 		D7D20E222A1F27D90097E6AF /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E212A1F27D90097E6AF /* TestingAppDelegate.swift */; };
 		D7D20E242A1F28070097E6AF /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E232A1F28070097E6AF /* TestingSceneDelegate.swift */; };
 		D7D20E262A1F28380097E6AF /* TestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E252A1F28380097E6AF /* TestingRootViewController.swift */; };
-		D7D7DFBD2A1DCD5600F3EFDD /* YandexCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7D7DFBC2A1DCD5600F3EFDD /* YandexCredentials.plist */; };
+		D7D20E2A2A1F2DDE0097E6AF /* MockCredentialsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D20E292A1F2DDE0097E6AF /* MockCredentialsProvider.swift */; };
+		D7D20E2C2A1F30840097E6AF /* YandexCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7D20E2B2A1F30840097E6AF /* YandexCredentials.plist */; };
 		D7D7DFBF2A1DD54800F3EFDD /* RequestProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */; };
 		D7D7DFC12A1DD68C00F3EFDD /* RequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */; };
 		D7F1FD4B2902780000B5D783 /* CarAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */; };
@@ -82,7 +82,6 @@
 		D75B71072A1DB620002400B9 /* YandexDriveCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexDriveCredentials.swift; sourceTree = "<group>"; };
 		D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsProviderProtocol.swift; sourceTree = "<group>"; };
 		D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsProvider.swift; sourceTree = "<group>"; };
-		D75B710F2A1DBE2A002400B9 /* MockCredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCredentialsProvider.swift; sourceTree = "<group>"; };
 		D75EB84928EE614900779690 /* CarSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75EB84C28EE614900779690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D75EB84E28EE614900779690 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +118,8 @@
 		D7D20E212A1F27D90097E6AF /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		D7D20E232A1F28070097E6AF /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		D7D20E252A1F28380097E6AF /* TestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingRootViewController.swift; sourceTree = "<group>"; };
-		D7D7DFBC2A1DCD5600F3EFDD /* YandexCredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = YandexCredentials.plist; sourceTree = "<group>"; };
+		D7D20E292A1F2DDE0097E6AF /* MockCredentialsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCredentialsProvider.swift; sourceTree = "<group>"; };
+		D7D20E2B2A1F30840097E6AF /* YandexCredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = YandexCredentials.plist; sourceTree = "<group>"; };
 		D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviderProtocol.swift; sourceTree = "<group>"; };
 		D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProvider.swift; sourceTree = "<group>"; };
 		D7F1FD4A2902780000B5D783 /* CarAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotationView.swift; sourceTree = "<group>"; };
@@ -328,8 +328,8 @@
 				D7D20E252A1F28380097E6AF /* TestingRootViewController.swift */,
 				D7D20E232A1F28070097E6AF /* TestingSceneDelegate.swift */,
 				D7D20E212A1F27D90097E6AF /* TestingAppDelegate.swift */,
-				D7D7DFBC2A1DCD5600F3EFDD /* YandexCredentials.plist */,
-				D75B710F2A1DBE2A002400B9 /* MockCredentialsProvider.swift */,
+				D7D20E292A1F2DDE0097E6AF /* MockCredentialsProvider.swift */,
+				D7D20E2B2A1F30840097E6AF /* YandexCredentials.plist */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -448,7 +448,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7D7DFBD2A1DCD5600F3EFDD /* YandexCredentials.plist in Resources */,
 				D785B1B528F00180004C1441 /* yandexdrive.json in Resources */,
 				D7CB91E728F3A9EB00D0E946 /* citydrive.json in Resources */,
 			);
@@ -458,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D20E2C2A1F30840097E6AF /* YandexCredentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +523,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75EB88228EE692A00779690 /* MockURLProtocol.swift in Sources */,
-				D75B71102A1DBE2A002400B9 /* MockCredentialsProvider.swift in Sources */,
 				D78E5CE32A16FF3600BB5AC7 /* TestingAppDelegate.swift in Sources */,
 				D78E5CE52A16FF6A00BB5AC7 /* TestingSceneDelegate.swift in Sources */,
 				D78E5CED2A172F4B00BB5AC7 /* CarsViewModelTests.swift in Sources */,
@@ -540,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D20E242A1F28070097E6AF /* TestingSceneDelegate.swift in Sources */,
+				D7D20E2A2A1F2DDE0097E6AF /* MockCredentialsProvider.swift in Sources */,
 				D7D20E222A1F27D90097E6AF /* TestingAppDelegate.swift in Sources */,
 				D7D20E262A1F28380097E6AF /* TestingRootViewController.swift in Sources */,
 				D7D20E202A1F26310097E6AF /* CarsViewModelTests.swift in Sources */,
@@ -792,13 +792,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 973295K87L;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.motodolphin.CarSharingIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -815,13 +817,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 973295K87L;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.motodolphin.CarSharingIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

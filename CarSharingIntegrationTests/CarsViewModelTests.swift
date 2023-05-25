@@ -9,19 +9,26 @@ import XCTest
 @testable import CarSharing
 
 final class CarsViewModelTests: XCTestCase {
+    var mockCredentialsProvider: MockCredentialsProvider!
     var sut: CarsViewModel!
 
     override func setUpWithError() throws {
-        // TODO: rename and to andNetworkProvider
-//        sut = CarsViewModel(with: [.yandexDrive], and: <#T##NetworkProviderProtocol#>, and: <#T##CarsDecoderProtocol#>, and: <#T##CredentialsProviderProtocol#>)
-
+        mockCredentialsProvider = MockCredentialsProvider()
+        sut = CarsViewModel(carsharingProviders: [.yandexDrive],
+                            credentialsProvider: mockCredentialsProvider)
     }
 
     override func tearDownWithError() throws {
         sut = nil
+        mockCredentialsProvider = nil
     }
 
-    func testCarsViewModel_WhenProvideCredentialsFromPlist_ShouldReturnCars() throws {
+    func testCarsViewModel_WhenProvideCredentialsFromPlist_ShouldReturnCars() async throws {
+        let cars = try await sut.fetchCars()
+        guard cars.count > 0 else {
+            XCTFail("There is no cars")
+            return
+        }
     }
 
 }

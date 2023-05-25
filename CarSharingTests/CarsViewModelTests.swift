@@ -16,9 +16,9 @@ final class CarsViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         mockNetworkProvider = MockNetworkProvider()
         mockCarsDecoder = MockCarsDecoder()
-        sut = CarsViewModel(with: [.cityDrive],
-                            and: mockNetworkProvider,
-                            and: mockCarsDecoder)
+        sut = CarsViewModel(carsharingProviders: [.cityDrive],
+                            networkProvider: mockNetworkProvider,
+                            carsDecoder: mockCarsDecoder)
     }
 
     override func tearDownWithError() throws {

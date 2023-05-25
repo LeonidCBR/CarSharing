@@ -11,17 +11,18 @@ import OSLog
 let carsViewModelLogger = Logger(subsystem: "CarSharing", category: "CarsViewModel")
 
 final class CarsViewModel {
-    private let networkProvider: NetworkProviderProtocol
-    private let carsDecoder: CarsDecoderProtocol
     private let credentialsProvider: CredentialsProviderProtocol
     private let requestProvider: RequestProviderProtocol
+    private let networkProvider: NetworkProviderProtocol
+    private let carsDecoder: CarsDecoderProtocol
+
     var carsharingProviders: [ProviderType]
 
-    init(with carsharingProviders: [ProviderType] = [],
-         and networkProvider: NetworkProviderProtocol = NetworkProvider(),
-         and carsDecoder: CarsDecoderProtocol = CarsDecoder(),
-         and credentialsProvider: CredentialsProviderProtocol = CredentialsProvider(),
-         and requestProvider: RequestProviderProtocol = RequestProvider()) {
+    init(carsharingProviders: [ProviderType] = [],
+         credentialsProvider: CredentialsProviderProtocol = CredentialsProvider(),
+         requestProvider: RequestProviderProtocol = RequestProvider(),
+         networkProvider: NetworkProviderProtocol = NetworkProvider(),
+         carsDecoder: CarsDecoderProtocol = CarsDecoder()) {
         self.carsharingProviders = carsharingProviders
         self.networkProvider = networkProvider
         self.carsDecoder = carsDecoder
