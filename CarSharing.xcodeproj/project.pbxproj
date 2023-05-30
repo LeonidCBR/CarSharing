@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D785B1A728EFB405004C1441 /* Protocols */,
-				D75EB88328EE90A300779690 /* API */,
+				D75EB88328EE90A300779690 /* Services */,
 				D75EB88428EE90C100779690 /* Model */,
 				D7C5AB752907A9BC00CC60C0 /* View */,
 				D785B1A428EFAFB8004C1441 /* ViewModel */,
@@ -224,12 +224,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		D75EB88328EE90A300779690 /* API */ = {
+		D75EB88328EE90A300779690 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */,
+				D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */,
 				D75EB87C28EE65F800779690 /* NetworkProvider.swift */,
+				D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */,
 			);
-			path = API;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D75EB88428EE90C100779690 /* Model */ = {
@@ -242,9 +245,6 @@
 				D785B1B828F00BAC004C1441 /* ProviderType.swift */,
 				D75B71072A1DB620002400B9 /* Credentials.swift */,
 				D768742929022A19000A0084 /* CarAnnotation.swift */,
-				D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */,
-				D75B710D2A1DBCF5002400B9 /* CredentialsProvider.swift */,
-				D7D7DFC02A1DD68C00F3EFDD /* RequestProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,9 +270,9 @@
 			children = (
 				D785B1A828EFB501004C1441 /* Car.swift */,
 				D70AC62E2A15E3650010993C /* Feed.swift */,
-				D78E5CE82A172C7300BB5AC7 /* NetworkProviderProtocol.swift */,
 				D75B710B2A1DBBC4002400B9 /* CredentialsProviderProtocol.swift */,
 				D7D7DFBE2A1DD54800F3EFDD /* RequestProviderProtocol.swift */,
+				D78E5CE82A172C7300BB5AC7 /* NetworkProviderProtocol.swift */,
 				D78E5CEE2A185BC100BB5AC7 /* CarsDecoderProtocol.swift */,
 			);
 			path = Protocols;
