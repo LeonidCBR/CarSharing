@@ -73,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B83F25E92B7B390B00B5B280 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D70AC62C2A15DF4D0010993C /* CarsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDecoder.swift; sourceTree = "<group>"; };
 		D70AC62E2A15E3650010993C /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		D70AC6302A15E5990010993C /* CarError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarError.swift; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 		D75EB84028EE614900779690 = {
 			isa = PBXGroup;
 			children = (
+				B83F25E92B7B390B00B5B280 /* README.md */,
 				D75EB84B28EE614900779690 /* CarSharing */,
 				D75EB86228EE614E00779690 /* CarSharingTests */,
 				D7D20E162A1F25660097E6AF /* CarSharingIntegrationTests */,
